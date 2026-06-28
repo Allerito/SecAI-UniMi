@@ -1,172 +1,171 @@
-# 1. Le potenze
+## Le potenze
 Una **potenza** è una moltiplicazione ripetuta dello stesso numero.
-$$  
-a^n=\underbrace{a\cdot{a}\cdot{a} \cdots{a}}_{n \text{ volte}}  
 $$
-
+a^n=\underbrace{a\cdot{a}\cdot{a} \cdots{a}}_{n \text{ volte}}
+$$
 **Dove:**
 - **a** = base
 - **n** = esponente
 
 **Esempio:**
 $$
-3^4=3\cdot{3}\cdot{3}\cdot{3}=81  
+3^4=3\cdot{3}\cdot{3}\cdot{3}=81
 $$
 ---
-# 2. Esponente negativo
+## Esponente negativo
 Un esponente negativo indica il reciproco.
-$$  
-a^{-n}=\frac{1}{a^n}  
+$$
+a^{-n}=\frac{1}{a^n}
 $$
 
 **Esempi:**
 
-$$  
-2^{-3}=\frac{1}{2^3}=\frac{1}{8}  
 $$
-$$  
-10^{-2}=0,01  
+2^{-3}=\frac{1}{2^3}=\frac{1}{8}
+$$
+$$
+10^{-2}=0,01
 $$
 ---
-# 3. Casi particolari
+## Casi particolari
 
-## Esponente 0
+### Esponente 0
 
-Qualunque numero diverso da zero elevato a zero vale 1.
+Qualunque numero diverso da zero elevato a zero vale
 
 La condizione di esistenza è data dalla dimostrazione (vedi 1)
 
-$$  
-a^0=1  
+$$
+a^0=1
 $$
 
 **Dimostrazione:**
 
-$$  
-\begin{equation}  
-a^0=a^n\cdot{a^{-n}}=a^n\cdot{\frac{1}{a^n}=1}  
-\end{equation}  
+$$
+\begin{equation}
+a^0=a^n\cdot{a^{-n}}=a^n\cdot{\frac{1}{a^n}=1}
+\end{equation}
 $$
 
 Ricorda questo è vero se e solo se $a\not=0$ per condizione d’esistenza altrimenti la frazione non può esistere
 
 **Esempi:**
 
-$$  
-5^0=1  
+$$
+5^0=1
 $$
 
-$$  
-(-12)^0=1  
+$$
+(-12)^0=1
 $$
 
-## Esponente 1
+### Esponente 1
 
-$$  
-a^1=a  
+$$
+a^1=a
 $$
 
 **Esempio:**
 
-$$  
-7^1=7  
+$$
+7^1=7
 $$
 
-## Base uguale a 0
+### Base uguale a 0
 
 Attenzione $0^0$ non è definito
 
 - Esponente positivo: $0^n=0$
 - Esponente negativo: $0^{-n}=\infty$
 
-## Base uguale a 1
+### Base uguale a 1
 
 Essendo la potenza una moltiplicazione della base $n \cdot m$ volte, 1 moltiplicato per se stesso varrà sempre 1
 
-$$  
-1^n=1  
+$$
+1^n=1
 $$
 
 ---
 
-# 4. Proprietà delle potenze
+## Proprietà delle potenze
 
 > Queste sono da sapere a memoria.
 
-## Prodotto di potenze con la stessa base
+### Prodotto di potenze con la stessa base
 
 Si sommano gli esponenti:
 
-$$  
-a^m\cdot{a^n}=a^{m+n}  
+$$
+a^m\cdot{a^n}=a^{m+n}
 $$
 
 Esempio:
 
-$$  
-2^3\cdot{2^5}=2^8=256  
+$$
+2^3\cdot{2^5}=2^8=256
 $$
 
-## Divisione di potenze con la stessa base
+### Divisione di potenze con la stessa base
 
 Si sottraggono gli esponenti:
 
-$$  
-\frac{a^m}{a^n}=a^{m−n}  
+$$
+\frac{a^m}{a^n}=a^{m−n}
 $$
 
 Esempio:
 
-$$  
-\frac{3^7}{3^2}=3^5=243  
+$$
+\frac{3^7}{3^2}=3^5=243
 $$
 
-## Potenza di una potenza
+### Potenza di una potenza
 
 Si moltiplicano gli esponenti:
 
-$$  
-(a^m)^n=a^{mn}  
+$$
+(a^m)^n=a^{mn}
 $$
 
 Esempio:
 
-$$  
-(2^3)^2=2^6=64  
+$$
+(2^3)^2=2^6=64
 $$
 
-## Potenza di un prodotto
+### Potenza di un prodotto
 
-$$  
-(ab)^n=a^n\cdot{b^n}  
 $$
-
-Esempio:
-
-$$  
-(2\cdot{5})^3=2^3\cdot{5^3}=8\cdot{125}=1000  
-$$
-
-## Potenza di un quoziente
-
-$$  
-(\frac{a}{b})^n=\frac{a^n}{b^n}  
+(ab)^n=a^n\cdot{b^n}
 $$
 
 Esempio:
 
-$$  
-(\frac{2}{3})^2=\frac{4}{9}  
+$$
+(2\cdot{5})^3=2^3\cdot{5^3}=8\cdot{125}=1000
+$$
+
+### Potenza di un quoziente
+
+$$
+(\frac{a}{b})^n=\frac{a^n}{b^n}
+$$
+
+Esempio:
+
+$$
+(\frac{2}{3})^2=\frac{4}{9}
 $$
 
 ---
 
-# 5. Le radici
+## Le radici
 
 La radice è l’operazione inversa della potenza.
 
-$$  
-\sqrt[n]{a}={b} \longleftrightarrow b^n=a  
+$$
+\sqrt[n]{a}={b} \longleftrightarrow b^n=a
 $$
 
 **Dove:**
@@ -186,132 +185,130 @@ Un radicale di tipo $\sqrt[n]{A(x)}$ esiste nel campo dei numeri reali $\forall 
 
 Esempi:
 
-$$  
-\begin{equation*}  
-\sqrt{25}=5\longleftrightarrow5^2=25  
-\quad  
-\textnormal{dove } A(x) ≥ 0  
+$$
+\begin{equation*}
+\sqrt{25}=5\longleftrightarrow5^2=25
+\quad
+\textnormal{dove } A(x) ≥ 0
 \end{equation*}
-
 $$
 
-$$  
-\begin{equation*}  
-\sqrt[3]{-27}=-3\longleftrightarrow-3^3=-27  
-\quad  
-\textnormal{dove } \forall x \in \mathbb{R}  
-\end{equation*}  
+$$
+\begin{equation*}
+\sqrt[3]{-27}=-3\longleftrightarrow-3^3=-27
+\quad
+\textnormal{dove } \forall x \in \mathbb{R}
+\end{equation*}
 $$
 
-$$  
-\begin{equation*}  
-\sqrt{-9}=  
-\nexists x \in \mathbb{R}  
-\textnormal{ (non esiste nei numeri reali)}  
-\quad  
-\textnormal{ C.E. non rispettata}  
+$$
+\begin{equation*}
+\sqrt{-9}=
+\nexists x \in \mathbb{R}
+\textnormal{ (non esiste nei numeri reali)}
+\quad
+\textnormal{ C.E. non rispettata}
 \end{equation*}
-
 $$
 
 Attenzione:
 
-$$  
-\sqrt{x^2}=|x|  
+$$
+\sqrt{x^2}=|x|
 $$
 
 ---
 
-# 6. Proprietà delle radici
+## Proprietà delle radici
 
-## Prodotto
+### Prodotto
 
-$$  
-\begin{equation*}  
-\sqrt{ab}=\sqrt{a}\cdot\sqrt{b}  
-\quad  
-\textnormal{ dove } a\geq0,b\geq0  
+$$
+\begin{equation*}
+\sqrt{ab}=\sqrt{a}\cdot\sqrt{b}
+\quad
+\textnormal{ dove } a\geq0,b\geq0
 \end{equation*}
 
 $$
 
 **Esempio:**
 
-$$  
-\sqrt{36}=\sqrt{4}\cdot{\sqrt{9}}=2\cdot{3}=6  
+$$
+\sqrt{36}=\sqrt{4}\cdot{\sqrt{9}}=2\cdot{3}=6
 $$
 
 **Attenzione:**
 
 funziona solamente sui prodotti non sulle somme
 
-$$  
-\sqrt{a+b}=\sqrt{a}+\sqrt{b}  
+$$
+\sqrt{a+b}=\sqrt{a}+\sqrt{b}
 $$
 
 Infatti:
 
-$$  
-\sqrt{25}=5  
+$$
+\sqrt{25}=5
 $$
 
 Se applicassimo la proprietà invece risulterebbe:
 
-$$  
-\sqrt{25}=\sqrt{9}+\sqrt{16}=3+4=7  
+$$
+\sqrt{25}=\sqrt{9}+\sqrt{16}=3+4=7
 $$
 
-## Quoziente
+### Quoziente
 
-$$  
-\begin{equation*}  
-\sqrt{\frac{a}{b}}=\frac{\sqrt{a}}{\sqrt{b}}  
-\quad  
-\textnormal{ dove } b\geq0  
-\end{equation*}  
+$$
+\begin{equation*}
+\sqrt{\frac{a}{b}}=\frac{\sqrt{a}}{\sqrt{b}}
+\quad
+\textnormal{ dove } b\geq0
+\end{equation*}
 $$
 
 **Esempio:**
 
-$$  
-\sqrt{\frac{16}{9}}=\frac{\sqrt{16}}{\sqrt{9}}=\frac{4}{3}  
+$$
+\sqrt{\frac{16}{9}}=\frac{\sqrt{16}}{\sqrt{9}}=\frac{4}{3}
 $$
 
-## Razionalizzazione
+### Razionalizzazione
 
-$$  
-\frac{n}{\sqrt{m}}=\frac{n}{\sqrt{m}}\cdot{\sqrt{m}}=\frac{n\sqrt{m}}{m}  
+$$
+\frac{n}{\sqrt{m}}=\frac{n}{\sqrt{m}}\cdot{\sqrt{m}}=\frac{n\sqrt{m}}{m}
 $$
 
 Esempio:
 
-$$  
-\frac{4}{\sqrt{2}}=\frac{4}{\sqrt{2}}\cdot{\sqrt{2}}=\frac{4\sqrt{2}}{2}=2\sqrt{2}  
+$$
+\frac{4}{\sqrt{2}}=\frac{4}{\sqrt{2}}\cdot{\sqrt{2}}=\frac{4\sqrt{2}}{2}=2\sqrt{2}
 $$
 
 ---
 
-# 7. Potenze con esponente frazionario
+## Potenze con esponente frazionario
 
 Una radice può essere scritta come una potenza.
 
-$$  
-\sqrt[n]{a^m}=a^{\frac{m}{n}}  
+$$
+\sqrt[n]{a^m}=a^{\frac{m}{n}}
 $$
 
 **Esempi:**
 
-$$  
-\sqrt{16}=16^{\frac{1}{2}}=4  
+$$
+\sqrt{16}=16^{\frac{1}{2}}=4
 $$
 
-$$  
-\sqrt[3]{8}=8^{\frac{1}{3}}=2  
+$$
+\sqrt[3]{8}=8^{\frac{1}{3}}=2
 $$
 
 ---
 
-# Esercizi
+## Esercizi
 
 1. $5^3=?$
 2. $4^0=?$
