@@ -1,14 +1,13 @@
-
 name: Build and Deploy Quartz
 
 on:
   push:
     branches:
-      - master
+      - main
 
   pull_request:
     branches:
-      - master
+      - main
 
   workflow_dispatch:
 
@@ -16,7 +15,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: pages-${{ github.ref }}
+  group: quartz-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -30,10 +29,17 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Verify Quartz installation
+        run: |
+          test -f site/package.json
+          test -f site/package-lock.json
+          test -f site/quartz.config.yaml
+          test -d Ita
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: "24"
           cache: npm
           cache-dependency-path: site/package-lock.json
 
@@ -47,11 +53,24 @@ jobs:
 
       - name: Prepare Markdown content
         run: |
-           rm -rf site/content
-           mkdir -p site/content
+          rm -rf site/content
+          mkdir -p site/content/Ita site/content/Eng
 
-           cp -a it site/content/
-           cp -a en site/content/
+          cp -a Ita/. site/content/Ita/
+
+          if [ -d Eng ]; then
+            cp -a Eng/. site/content/Eng/
+          fi
+
+          if [ ! -f site/content/Eng/index.md ]; then
+            cat > site/content/Eng/index.md <<'EOF'
+          ---
+          title: English
+          ---
+
+          English study notes will be added here.
+          EOF
+          fi
 
       - name: Create homepage
         run: |
@@ -62,38 +81,38 @@ jobs:
 
           # SecAI-UniMi
 
-          Welcome to the Security and Artificial
-          Intelligence study notes.
+          Appunti di Sicurezza Informatica e Intelligenza Artificiale.
+          Security and Artificial Intelligence study notes.
 
-          ## Select your language
+          ## Scegli la lingua / Select your language
 
-          - [Italiano](./it/)
-          - [English](./en/)
+          - [Italiano](./Ita/)
+          - [English](./Eng/)
           EOF
 
       - name: Build Quartz
         working-directory: site
         run: npx quartz build
 
-      - name: Configure GitHub Pages
-        if: github.event_name != 'pull_request'
-        uses: actions/configure-pages@v5
-
       - name: Upload Pages artifact
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v4
         with:
           path: site/public
 
   deploy:
     name: Deploy to GitHub Pages
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
 
     permissions:
       pages: write
       id-token: write
+
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
 
     environment:
       name: github-pages
