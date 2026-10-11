@@ -1,0 +1,54 @@
+name: Formula error
+description: Report an incorrect formula, derivation, result, or worked exercise.
+title: "[Formula]: "
+labels:
+  - content
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please include enough context to identify and verify the formula.
+
+  - type: input
+    id: location
+    attributes:
+      label: Page or file
+      description: Link to the page or enter the path of the affected file.
+      placeholder: "https://... or materials/en/course/note.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: formula
+    attributes:
+      label: Incorrect formula or step
+      description: Quote the formula, calculation, or derivation and explain where it appears.
+      placeholder: You may use Markdown and LaTeX notation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Expected correction
+      description: Provide the corrected formula or result and show the relevant steps, if possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Sources or references
+      description: Link reliable material that supports the correction.
+      placeholder: Textbook section, lecture slides, paper, or authoritative webpage.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked that this is not only a notation difference.
+          required: true
+        - label: I searched the existing issues for a similar report.
+          required: true

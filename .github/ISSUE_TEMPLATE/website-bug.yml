@@ -1,0 +1,61 @@
+name: Website bug
+description: Report a problem with the Quartz website or its navigation.
+title: "[Website]: "
+labels:
+  - bug
+  - website
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the SecAI-UniMi website.
+
+  - type: input
+    id: page
+    attributes:
+      label: Affected page
+      description: Paste the URL where the problem occurs.
+      placeholder: "https://allerito.github.io/SecAI-UniMi/..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      placeholder: Firefox 131 on Windows 11, Safari on iPhone, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or additional context
+      description: Drag screenshots into this field and add any other useful details.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues for a similar report.
+          required: true
