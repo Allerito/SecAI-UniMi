@@ -1,0 +1,63 @@
+name: Content error
+description: Report an inaccurate explanation, missing context, or source problem.
+title: "[Content]: "
+labels:
+  - content
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for factual or conceptual problems. For formulas, use the dedicated formula error form.
+
+  - type: input
+    id: location
+    attributes:
+      label: Page or file
+      description: Link to the page or enter the path of the affected file.
+      placeholder: "https://... or materials/en/course/note.md"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: error-type
+    attributes:
+      label: Type of problem
+      options:
+        - Factual or conceptual error
+        - Missing or misleading explanation
+        - Outdated information
+        - Missing, incorrect, or unreliable source
+        - Other content problem
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is incorrect?
+      description: Quote the relevant passage and explain the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+      description: Describe what the material should say instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Sources or references
+      description: Add reliable sources that support the correction. Reports about sources can receive the `sources` label during triage.
+      placeholder: Links, books, lecture slides, standards, or papers.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues for a similar report.
+          required: true

@@ -1,0 +1,51 @@
+name: Writing improvement
+description: Report unclear wording, grammar, spelling, or formatting.
+title: "[Writing]: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping make the study materials clearer and easier to read.
+
+  - type: input
+    id: location
+    attributes:
+      label: Page or file
+      description: Link to the page or enter the path of the affected file.
+      placeholder: "https://... or materials/en/course/note.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-text
+    attributes:
+      label: Current text
+      description: Quote the passage that should be improved.
+      placeholder: Paste the relevant passage here.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-text
+    attributes:
+      label: Suggested improvement
+      description: Explain the problem or propose clearer wording.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Sources or references
+      description: Add reliable sources when they help support the proposed change.
+      placeholder: Links, books, lecture slides, or other references.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues for a similar report.
+          required: true

@@ -114,6 +114,14 @@ All contributions are subject to the repository's configured branch protection a
 
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting changes.
 
+### Report an Issue
+
+Found an incorrect formula, unclear explanation, broken link, unreliable source, or missing topic?
+
+[Open an Issue](https://github.com/Allerito/SecAI-UniMi/issues/new/choose) and select the appropriate template.
+
+You do not need programming experience or Git knowledge to report a problem. Every correction helps improve the study materials for everyone.
+
 ## 🔧 Website Development
 
 The documentation website is generated using Quartz 5 and published through GitHub Actions and GitHub Pages.

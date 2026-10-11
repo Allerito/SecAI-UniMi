@@ -1,0 +1,57 @@
+name: Material request
+description: Suggest a new topic, course resource, exercise, or study material.
+title: "[Material]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Requests should relate to the Security and Artificial Intelligence degree program at UniMi.
+
+  - type: input
+    id: course
+    attributes:
+      label: Course or subject
+      placeholder: Course name and, if relevant, academic year.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: material-type
+    attributes:
+      label: Requested material
+      options:
+        - Lecture notes or topic
+        - Worked exercise
+        - Practical example or code
+        - Additional reference or reading
+        - Translation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: request
+    attributes:
+      label: Request details
+      description: Explain what should be added and why it would be useful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Available sources or material
+      description: Link any reliable public sources or material that could help fulfil the request.
+      placeholder: Official syllabus, slides, books, papers, or webpages.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked that the requested material is not already present.
+          required: true
+        - label: I searched the existing issues for a similar request.
+          required: true
