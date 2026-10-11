@@ -1,3 +1,5 @@
+# Formulario di matematica base
+
 Questo formulario è suddiviso nelle macro-aree del Syllabus ufficiale CISIA. Ciascuna sezione contiene formule sintetiche, spiegazioni teoriche e accorgimenti pratici ideali per affrontare la prova senza l'uso della calcolatrice.
 
 ## 1. Numeri e Calcolo
@@ -111,7 +113,7 @@ Se abbiamo una costante reale $k > 0$:
 
 - **Cubo (spigolo** $s$**):**
     - Volume: $V = s^3$
-    - Serficie Totale: $S_{tot} = 6s^2$
+    - Superficie totale: $S_{tot} = 6s^2$
     - Diagonale interna: $d = s\sqrt{3}$
 - **Parallelepipedo rettangolo (lati** $a, b, c$**):**
     - Volume: $V = a \cdot b \cdot c$
@@ -165,7 +167,7 @@ La trigonometria nei triangoli rettangoli mette in relazione angoli e lati.
 
 ### Valori degli Angoli Notevoli
 
-È indispensabile memoaaaaaaaarizzare questa tabella per risparmiare tempo nel test:
+È utile memorizzare questa tabella per risparmiare tempo nel test:
 
 ||||||
 |---|---|---|---|---|
@@ -243,7 +245,7 @@ Per determinare in quanti modi si possono raggruppare o ordinare gli elementi di
 - **Probabilità dell'Intersezione di due eventi (Teorema della Probabilità Composta):**
     - Se gli eventi sono _indipendenti_ (il verificarsi di uno non influenza l'altro): $P(A \cap B) = P(A) \cdot P(B)$
     - Se gli eventi sono _dipendenti_: $P(A \cap B) = P(A) \cdot P(B|A)$
-- **Proabilità Condizionata (probabilità che si verifichi** $A$ **sapendo che si è già verificato** $B$**):** $P(A|B) = \frac{P(A \cap B)}{P(B)} \quad (\text{con } P(B) > 0)$
+- **Probabilità condizionata (probabilità che si verifichi** $A$ **sapendo che si è già verificato** $B$**):** $P(A|B) = \frac{P(A \cap B)}{P(B)} \quad (\text{con } P(B) > 0)$
 
 ## 6. Statistica Descrittiva
 

@@ -14,12 +14,12 @@ The project aims to make educational resources freely accessible, well-organized
 
 The repository is organized by language, subject area, and course.
 
-Materials are intended to be available in two languages:
+Materials are organized in language directories and can be extended without changing the website build configuration:
 
 | Language | Materials |
 |---|---|
-| 🇮🇹 Italian | [Browse Italian materials](./Ita/) |
-| 🇬🇧 English | English materials — coming soon |
+| 🇮🇹 Italian | [Browse Italian materials](./materials/it/) |
+| 🇬🇧 English | [Browse English materials](./materials/en/) |
 
 The project is currently being organized, and some directories do not contain notes yet.
 
@@ -51,15 +51,11 @@ SecAI-UniMi/
 ├── LICENSE.md
 ├── .gitignore
 │
-├── Ita/
-│   ├── Architetture informatiche e Reti/
-│   │   ├── Computing Systems/
-│   │   └── Reti e Cloud/
-│   │
-│   └── Matematica e Fondamenti di programmazione/
-│       ├── Matematica 1/
-│       ├── Matematica 2/
-│       └── Programmazione e Algoritmi I/
+├── materials/
+│   ├── it/
+│   │   ├── Architetture informatiche e Reti/
+│   │   └── Matematica e Fondamenti di programmazione/
+│   └── en/
 │
 ├── site/
 │   ├── quartz.config.yaml
@@ -72,7 +68,7 @@ SecAI-UniMi/
         └── deploy-pages.yml
 ```
 
-The planned English section will follow a comparable structure.
+Each direct child of `materials/` represents a language and must use a canonical BCP 47 language tag, such as `it`, `en`, `fr`, or `pt-BR`.
 
 Each course may eventually include theoretical explanations, worked exercises, code examples, and supporting assets.
 
@@ -87,7 +83,7 @@ To use the repository locally:
 3. Extract the archive.
 4. Open Obsidian.
 5. Select **Open folder as vault**.
-6. Choose the extracted repository folder or the appropriate language directory.
+6. Choose the extracted repository folder or the appropriate directory under `materials/`.
 
 You can read, search, annotate, and customize your downloaded copy of the notes.
 
@@ -102,7 +98,7 @@ You can help by:
 - Adding new lecture notes.
 - Improving or correcting explanations.
 - Providing exercises and worked solutions.
-- Translating content between Italian and English.
+- Translating content into additional languages.
 - Fixing broken links and formatting issues.
 - Reporting errors or proposing improvements.
 
@@ -137,12 +133,23 @@ From the repository root:
 cd site
 npm ci
 npx quartz plugin install --from-config
+npm run prepare-content
 npx quartz build --serve
 ```
 
 The commands start the local Quartz preview using the content currently available in `site/content/`.
 
-The GitHub Actions workflow prepares the language directories before producing the published website.
+The preparation script discovers every language under `materials/`, copies its content, creates missing language indexes, and generates the language links on the website homepage.
+
+### Adding a Language
+
+Create a directory under `materials/` using its canonical BCP 47 language tag and add the translated notes there. For example:
+
+```text
+materials/fr/
+```
+
+The next local or CI build will include `/fr/` automatically. No workflow or Quartz configuration change is required.
 
 ### Automatic Deployment
 

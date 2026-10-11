@@ -32,12 +32,12 @@ Avoid unnecessary modifications to unrelated files.
 
 The repository is organized primarily by **language**, followed by **cluster**, **course**, and **content type**.
 
-The two supported languages are:
+The currently available language sections are:
 
-- **Italian (`it/`)**
-- **English (`en/`)**
+- **Italian (`materials/it/`)**
+- **English (`materials/en/`)**
 
-Each language has its own independent directory structure.
+Additional languages are welcome. Each language has its own independent directory structure and is discovered automatically by the website build.
 
 ### Directory Organization
 
@@ -48,27 +48,16 @@ SecAI-UniMi/
 ├── CONTRIBUTING.md
 ├── LICENSE
 │
-├── it/
-│   ├── README.md
-│   ├── Cluster-1/
-│   │   ├── Course-Name/
-│   │   │   ├── Theory/
-│   │   │   ├── Exercises/
-│   │   │   └── Assets/
+├── materials/
+│   ├── it/
+│   │   ├── Cluster-1/
+│   │   │   └── Course-Name/
+│   │   │       ├── Theory/
+│   │   │       ├── Exercises/
+│   │   │       └── Assets/
 │   │   └── ...
-│   ├── Cluster-2/
-│   └── Cluster-3/
-│
-├── en/
-│   ├── README.md
-│   ├── Cluster-1/
-│   │   ├── Course-Name/
-│   │   │   ├── Theory/
-│   │   │   ├── Exercises/
-│   │   │   └── Assets/
-│   │   └── ...
-│   ├── Cluster-2/
-│   └── Cluster-3/
+│   ├── en/
+│   └── fr/
 │
 └── .github/
     ├── CODEOWNERS
@@ -80,6 +69,8 @@ This structure is illustrative. The actual cluster and course directories should
 ### Organization Rules
 
 - Place all new materials inside the appropriate language directory.
+- Name language directories with canonical BCP 47 tags such as `it`, `en`, `fr`, or `pt-BR`.
+- Add a new directory directly under `materials/` when contributing the first content for a new language; the website will include it automatically.
 - Organize notes according to the relevant cluster and course.
 - Store theoretical explanations in `Theory/`.
 - Store exercises, problems, and worked solutions in `Exercises/`.
@@ -91,11 +82,11 @@ Whenever possible, use consistent cluster and course directory names across both
 
 ## 3. Language Guidelines
 
-Both Italian and English contributions are accepted.
+Contributions in Italian, English, and additional languages are accepted.
 
 Contributors are **not required to provide translations** of their work.
 
-The two language sections may grow independently and do not need to contain identical material.
+Language sections may grow independently and do not need to contain identical material.
 
 ### Writing Notes
 
@@ -103,7 +94,7 @@ The two language sections may grow independently and do not need to contain iden
 - Use correct spelling, grammar, and technical terminology.
 - Keep explanations clear and concise.
 - Technical terms, code, mathematical notation, and quotations may remain in their original language.
-- Avoid mixing Italian and English unnecessarily within the same note.
+- Avoid mixing languages unnecessarily within the same note.
 
 ### Translating Notes
 
@@ -252,7 +243,7 @@ Contributions may include:
 - Summaries and revision materials.
 - Diagrams and illustrations.
 - Bibliographic references.
-- Italian or English translations.
+- Translations into any language.
 - Improvements to Markdown formatting and Obsidian navigation.
 
 ### Quality Requirements
@@ -355,7 +346,7 @@ Suggested prefixes:
 | `notes/` | New notes or theoretical content |
 | `exercises/` | Exercises and worked solutions |
 | `fix/` | Corrections to existing content |
-| `translation/` | Italian or English translations |
+| `translation/` | Translations into another language |
 | `docs/` | Documentation or navigation improvements |
 | `refactor/` | Structural or formatting improvements |
 

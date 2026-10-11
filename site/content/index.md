@@ -1,6 +1,13 @@
 ---
-title: Welcome to Quartz
+title: SecAI-UniMi
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+# SecAI-UniMi
+
+Appunti di Sicurezza Informatica e Intelligenza Artificiale.  
+Security and Artificial Intelligence study notes.
+
+## Lingue / Languages
+
+- [English](./en/)
+- [Italiano](./it/)

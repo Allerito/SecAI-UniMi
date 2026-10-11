@@ -1,3 +1,19 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// Use the full desktop viewport and give more room to the article while
+// keeping both navigation sidebars available.
+@media all and ($desktop) {
+  .page {
+    width: 100%;
+    max-width: none;
+
+    & > #quartz-body {
+      grid-template-columns: minmax(250px, 280px) minmax(0, 1fr) minmax(250px, 280px);
+
+      & .sidebar {
+        padding-right: 1.25rem;
+        padding-left: 1.25rem;
+      }
+    }
+  }
+}

@@ -14,6 +14,8 @@
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
     "docs": "npx quartz build --serve -d docs",
+    "prepare-content": "node scripts/prepare-content.mjs",
+    "test:content-preparation": "node --test scripts/prepare-content.test.mjs",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx --test",
@@ -86,7 +88,7 @@
     "@quartz-community/tag-page": "^1.0.0",
     "@quartz-community/unlisted-pages": "^1.0.0",
     "@quartz-themes/core": "^2.0.0",
-    "@quartz-themes/default": "^1.0.1",
+    "@quartz-themes/minimal": "^1.0.1",
     "ansi-truncate": "^1.4.0",
     "async-mutex": "^0.5.0",
     "chokidar": "^5.0.0",

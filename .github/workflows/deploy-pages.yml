@@ -34,7 +34,7 @@ jobs:
           test -f site/package.json
           test -f site/package-lock.json
           test -f site/quartz.config.yaml
-          test -d Ita
+          test -d materials
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -51,44 +51,8 @@ jobs:
         working-directory: site
         run: node quartz/bootstrap-cli.mjs plugin install --from-config
 
-      - name: Prepare Markdown content
-        run: |
-          rm -rf site/content
-          mkdir -p site/content/Ita site/content/Eng
-
-          cp -a Ita/. site/content/Ita/
-
-          if [ -d Eng ]; then
-            cp -a Eng/. site/content/Eng/
-          fi
-
-          if [ ! -f site/content/Eng/index.md ]; then
-            cat > site/content/Eng/index.md <<'EOF'
-          ---
-          title: English
-          ---
-
-          English study notes will be added here.
-          EOF
-          fi
-
-      - name: Create homepage
-        run: |
-          cat > site/content/index.md <<'EOF'
-          ---
-          title: SecAI-UniMi
-          ---
-
-          # SecAI-UniMi
-
-          Appunti di Sicurezza Informatica e Intelligenza Artificiale.
-          Security and Artificial Intelligence study notes.
-
-          ## Scegli la lingua / Select your language
-
-          - [Italiano](./Ita/)
-          - [English](./Eng/)
-          EOF
+      - name: Prepare multilingual content
+        run: node site/scripts/prepare-content.mjs
 
       - name: Build Quartz
         working-directory: site
