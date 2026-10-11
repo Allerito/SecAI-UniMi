@@ -1,0 +1,103 @@
+
+name: Build and Deploy Quartz
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Quartz website
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Install Quartz plugins
+        working-directory: site
+        run: npx quartz plugin install --from-config
+
+      - name: Prepare Markdown content
+        run: |
+          mkdir -p site/content
+          cp -a it site/content/
+          cp -a en site/content/
+
+      - name: Create homepage
+        run: |
+          cat > site/content/index.md <<'EOF'
+          ---
+          title: SecAI-UniMi
+          ---
+
+          # SecAI-UniMi
+
+          Welcome to the Security and Artificial
+          Intelligence study notes.
+
+          ## Select your language
+
+          - [Italiano](./it/)
+          - [English](./en/)
+          EOF
+
+      - name: Build Quartz
+        working-directory: site
+        run: npx quartz build
+
+      - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site/public
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
