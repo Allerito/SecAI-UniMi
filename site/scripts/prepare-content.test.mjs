@@ -30,6 +30,8 @@ test("discovers every language and generates navigation and missing indexes", as
   assert.deepEqual(languages.map(({ locale }) => locale).sort(), ["fr", "it"])
   assert.match(home, /\.\/fr\//)
   assert.match(home, /\.\/it\//)
+  assert.match(home, /## Languages/)
+  assert.doesNotMatch(home, /Lingue|Appunti/)
   assert.match(italianIndex, /lang: "it"/)
   assert.equal(frenchIndex, "# Accueil personnalisé\n")
 })
