@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Lettura grafica di equazioni e disequazioni di primo grado</title>
+  <desc id="desc">La retta y uguale 2x meno 2 incontra l'asse x in x uguale 1. A sinistra la funzione è negativa, a destra è positiva.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill: #ffffff; }
+    .grid { stroke: #d8dee9; stroke-width: 1; }
+    .axis { stroke: #344054; stroke-width: 2; }
+    .tick { stroke: #667085; stroke-width: 1.5; }
+    .txt { fill: #1d2939; font: 18px system-ui, sans-serif; }
+    .small { fill: #475467; font: 15px system-ui, sans-serif; }
+    .positive { stroke: #1677b8; fill: #1677b8; }
+    .negative { stroke: #d05a32; fill: #d05a32; }
+    .neutral { stroke: #344054; fill: #ffffff; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #17191f; }
+      .grid { stroke: #343946; }
+      .axis { stroke: #d0d5dd; }
+      .tick { stroke: #98a2b3; }
+      .txt { fill: #f2f4f7; }
+      .small { fill: #d0d5dd; }
+      .neutral { stroke: #d0d5dd; fill: #17191f; }
+      .positive { stroke: #64b5e8; fill: #64b5e8; }
+      .negative { stroke: #f08a67; fill: #f08a67; }
+    }
+  </style>
+  <rect class="bg" width="900" height="430" rx="12"/>
+  <text class="txt" x="32" y="38">Esempio: f(x) = 2x − 2</text>
+
+  <g aria-label="Piano cartesiano">
+    <path class="grid" d="M70 90H850 M70 140H850 M70 190H850 M70 240H850 M70 290H850"/>
+    <path class="grid" d="M130 70V310 M250 70V310 M370 70V310 M490 70V310 M610 70V310 M730 70V310"/>
+    <path class="axis" d="M60 240H860 M370 60V320"/>
+    <path class="axis" d="m860 240-12-7v14z M370 60l-7 12h14z"/>
+    <text class="small" x="842" y="230">x</text>
+    <text class="small" x="382" y="78">y</text>
+
+    <path class="negative" d="M340 340L490 240" stroke-width="5" fill="none"/>
+    <path class="positive" d="M490 240L790 40" stroke-width="5" fill="none"/>
+    <circle class="neutral" cx="490" cy="240" r="7" stroke-width="3"/>
+    <path class="tick" d="M490 232V248"/>
+    <text class="txt" x="482" y="272">1</text>
+    <text class="small" x="505" y="225">f(1) = 0</text>
+  </g>
+
+  <g aria-label="Schema del segno">
+    <text class="small" x="70" y="350">valori di x</text>
+    <path class="axis" d="M190 345H830"/>
+    <path class="axis" d="m830 345-12-7v14z"/>
+    <path class="negative" d="M200 345H486" stroke-width="9"/>
+    <path class="positive" d="M494 345H820" stroke-width="9"/>
+    <circle class="neutral" cx="490" cy="345" r="8" stroke-width="3"/>
+    <text class="txt" x="285" y="386">f(x) &lt; 0</text>
+    <text class="txt" x="612" y="386">f(x) &gt; 0</text>
+    <text class="small" x="475" y="418">x = 1</text>
+  </g>
+</svg>

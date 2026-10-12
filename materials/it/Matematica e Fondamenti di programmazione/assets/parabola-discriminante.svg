@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" role="img" aria-labelledby="title desc">
+  <title id="title">Il discriminante e le intersezioni della parabola con l'asse x</title>
+  <desc id="desc">Tre grafici mostrano due intersezioni quando delta è positivo, una radice doppia quando delta è zero e nessuna intersezione quando delta è negativo.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill: #ffffff; }
+    .panel { fill: none; stroke: #d0d5dd; stroke-width: 1.5; }
+    .axis { stroke: #344054; stroke-width: 2; }
+    .curve { stroke: #1677b8; fill: none; stroke-width: 5; }
+    .root { fill: #ffffff; stroke: #d05a32; stroke-width: 4; }
+    .txt { fill: #1d2939; font: 18px system-ui, sans-serif; }
+    .small { fill: #475467; font: 15px system-ui, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #17191f; }
+      .panel { stroke: #475467; }
+      .axis { stroke: #d0d5dd; }
+      .curve { stroke: #64b5e8; }
+      .root { fill: #17191f; stroke: #f08a67; }
+      .txt { fill: #f2f4f7; }
+      .small { fill: #d0d5dd; }
+    }
+  </style>
+  <rect class="bg" width="900" height="330" rx="12"/>
+  <text class="txt" x="32" y="38">Δ conta le intersezioni con l’asse x</text>
+
+  <g transform="translate(28 62)" aria-label="Delta positivo">
+    <rect class="panel" width="264" height="238" rx="10"/>
+    <text class="txt" x="16" y="30">Δ &gt; 0</text>
+    <text class="small" x="145" y="30">due radici</text>
+    <path class="axis" d="M18 130H246 M132 50V210"/>
+    <path class="curve" d="M38 68Q132 248 226 68"/>
+    <circle class="root" cx="76" cy="130" r="6"/>
+    <circle class="root" cx="188" cy="130" r="6"/>
+    <text class="small" x="64" y="156">x₁</text>
+    <text class="small" x="178" y="156">x₂</text>
+  </g>
+
+  <g transform="translate(318 62)" aria-label="Delta uguale a zero">
+    <rect class="panel" width="264" height="238" rx="10"/>
+    <text class="txt" x="16" y="30">Δ = 0</text>
+    <text class="small" x="118" y="30">una radice doppia</text>
+    <path class="axis" d="M18 156H246 M132 50V210"/>
+    <path class="curve" d="M38 74Q132 238 226 74"/>
+    <circle class="root" cx="132" cy="156" r="6"/>
+    <text class="small" x="120" y="183">x₀</text>
+  </g>
+
+  <g transform="translate(608 62)" aria-label="Delta negativo">
+    <rect class="panel" width="264" height="238" rx="10"/>
+    <text class="txt" x="16" y="30">Δ &lt; 0</text>
+    <text class="small" x="125" y="30">nessuna radice</text>
+    <path class="axis" d="M18 178H246 M132 50V210"/>
+    <path class="curve" d="M38 64Q132 210 226 64"/>
+    <text class="small" x="42" y="226">nessuna intersezione reale</text>
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Segno di una parabola con due radici reali</title>
+  <desc id="desc">Con concavità verso l'alto la parabola è positiva fuori dalle radici e negativa tra esse. Con concavità verso il basso vale il contrario.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill: #ffffff; }
+    .panel { fill: none; stroke: #d0d5dd; stroke-width: 1.5; }
+    .grid { stroke: #e4e7ec; stroke-width: 1; }
+    .axis { stroke: #344054; stroke-width: 2; }
+    .txt { fill: #1d2939; font: 18px system-ui, sans-serif; }
+    .small { fill: #475467; font: 15px system-ui, sans-serif; }
+    .positive { stroke: #1677b8; fill: #1677b8; }
+    .negative { stroke: #d05a32; fill: #d05a32; }
+    .root { fill: #ffffff; stroke: #344054; stroke-width: 3; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #17191f; }
+      .panel { stroke: #475467; }
+      .grid { stroke: #343946; }
+      .axis { stroke: #d0d5dd; }
+      .txt { fill: #f2f4f7; }
+      .small { fill: #d0d5dd; }
+      .root { fill: #17191f; stroke: #d0d5dd; }
+      .positive { stroke: #64b5e8; fill: #64b5e8; }
+      .negative { stroke: #f08a67; fill: #f08a67; }
+    }
+  </style>
+  <rect class="bg" width="900" height="520" rx="12"/>
+  <text class="txt" x="32" y="38">Δ &gt; 0: il segno cambia attraversando ciascuna radice</text>
+
+  <g transform="translate(28 62)" aria-label="Parabola con concavità verso l'alto">
+    <rect class="panel" width="408" height="420" rx="10"/>
+    <text class="txt" x="20" y="34">a &gt; 0</text>
+    <text class="small" x="170" y="34">concavità verso l’alto</text>
+    <path class="grid" d="M36 90H382 M36 150H382 M36 210H382 M36 270H382"/>
+    <path class="axis" d="M30 180H390 M204 68V292"/>
+    <path class="positive" d="M60 82Q89 145 126 180" stroke-width="5" fill="none"/>
+    <path class="negative" d="M126 180Q204 254 282 180" stroke-width="5" fill="none"/>
+    <path class="positive" d="M282 180Q319 145 348 82" stroke-width="5" fill="none"/>
+    <circle class="root" cx="126" cy="180" r="6"/>
+    <circle class="root" cx="282" cy="180" r="6"/>
+    <text class="small" x="111" y="205">x₁</text>
+    <text class="small" x="270" y="205">x₂</text>
+    <path class="positive" d="M48 322H124 M284 322H360" stroke-width="8"/>
+    <path class="negative" d="M130 322H278" stroke-width="8"/>
+    <circle class="root" cx="126" cy="322" r="7"/>
+    <circle class="root" cx="282" cy="322" r="7"/>
+    <text class="small" x="45" y="354">+</text>
+    <text class="small" x="198" y="354">−</text>
+    <text class="small" x="350" y="354">+</text>
+    <text class="small" x="20" y="382">f(x) &gt; 0: intervalli esterni</text>
+    <text class="small" x="20" y="408">f(x) &lt; 0: intervallo interno</text>
+  </g>
+
+  <g transform="translate(464 62)" aria-label="Parabola con concavità verso il basso">
+    <rect class="panel" width="408" height="420" rx="10"/>
+    <text class="txt" x="20" y="34">a &lt; 0</text>
+    <text class="small" x="158" y="34">concavità verso il basso</text>
+    <path class="grid" d="M36 90H382 M36 150H382 M36 210H382 M36 270H382"/>
+    <path class="axis" d="M30 180H390 M204 68V292"/>
+    <path class="negative" d="M60 278Q89 215 126 180" stroke-width="5" fill="none"/>
+    <path class="positive" d="M126 180Q204 106 282 180" stroke-width="5" fill="none"/>
+    <path class="negative" d="M282 180Q319 215 348 278" stroke-width="5" fill="none"/>
+    <circle class="root" cx="126" cy="180" r="6"/>
+    <circle class="root" cx="282" cy="180" r="6"/>
+    <text class="small" x="111" y="205">x₁</text>
+    <text class="small" x="270" y="205">x₂</text>
+    <path class="negative" d="M48 322H124 M284 322H360" stroke-width="8"/>
+    <path class="positive" d="M130 322H278" stroke-width="8"/>
+    <circle class="root" cx="126" cy="322" r="7"/>
+    <circle class="root" cx="282" cy="322" r="7"/>
+    <text class="small" x="45" y="354">−</text>
+    <text class="small" x="198" y="354">+</text>
+    <text class="small" x="350" y="354">−</text>
+    <text class="small" x="20" y="382">f(x) &lt; 0: intervalli esterni</text>
+    <text class="small" x="20" y="408">f(x) &gt; 0: intervallo interno</text>
+  </g>
+</svg>
