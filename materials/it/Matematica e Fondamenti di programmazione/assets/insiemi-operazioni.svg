@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Operazioni tra due insiemi</title>
+  <desc id="desc">Tre diagrammi di Venn mostrano l'unione, l'intersezione e la differenza A meno B.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill: #fff; } .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 2; }
+    .set { fill: none; stroke: #334155; stroke-width: 3; }
+    .a { fill: #38bdf8; fill-opacity: .5; } .b { fill: #a78bfa; fill-opacity: .5; }
+    .both { fill: #2563eb; fill-opacity: .72; } .label { fill: #0f172a; font: 24px system-ui,sans-serif; }
+    .small { fill: #334155; font: 20px system-ui,sans-serif; }
+    @media (prefers-color-scheme: dark) { .bg { fill:#17191f; } .panel { fill:#20242d; stroke:#475569; } .set { stroke:#e2e8f0; } .label { fill:#f8fafc; } .small { fill:#cbd5e1; } }
+  </style>
+  <rect class="bg" width="1200" height="420" rx="14"/>
+  <g transform="translate(20 20)">
+    <rect class="panel" width="370" height="380" rx="12"/>
+    <text class="label" x="185" y="42" text-anchor="middle">Unione: A ∪ B</text>
+    <ellipse class="a" cx="145" cy="205" rx="105" ry="90"/><ellipse class="b" cx="225" cy="205" rx="105" ry="90"/>
+    <ellipse class="set" cx="145" cy="205" rx="105" ry="90"/><ellipse class="set" cx="225" cy="205" rx="105" ry="90"/>
+    <text class="small" x="93" y="210">A</text><text class="small" x="268" y="210">B</text>
+    <text class="small" x="185" y="338" text-anchor="middle">in almeno uno dei due</text>
+  </g>
+  <g transform="translate(415 20)">
+    <rect class="panel" width="370" height="380" rx="12"/>
+    <text class="label" x="185" y="42" text-anchor="middle">Intersezione: A ∩ B</text>
+    <ellipse class="set" cx="145" cy="205" rx="105" ry="90"/><ellipse class="set" cx="225" cy="205" rx="105" ry="90"/>
+    <path class="both" d="M185 128a105 90 0 0 1 0 154a105 90 0 0 1 0-154z"/>
+    <text class="small" x="93" y="210">A</text><text class="small" x="268" y="210">B</text>
+    <text class="small" x="185" y="338" text-anchor="middle">in entrambi</text>
+  </g>
+  <g transform="translate(810 20)">
+    <rect class="panel" width="370" height="380" rx="12"/>
+    <text class="label" x="185" y="42" text-anchor="middle">Differenza: A \ B</text>
+    <path class="a" d="M185 128a105 90 0 1 0 0 154a105 90 0 0 1 0-154z"/>
+    <ellipse class="set" cx="145" cy="205" rx="105" ry="90"/><ellipse class="set" cx="225" cy="205" rx="105" ry="90"/>
+    <text class="small" x="93" y="210">A</text><text class="small" x="268" y="210">B</text>
+    <text class="small" x="185" y="338" text-anchor="middle">in A ma non in B</text>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 430" role="img" aria-labelledby="title desc">
+  <title id="title">Prodotto righe per colonne</title><desc id="desc">La seconda riga della prima matrice viene moltiplicata scalarmente per la terza colonna della seconda matrice per ottenere l'elemento c due tre.</desc>
+  <style>:root{color-scheme:light dark}.bg{fill:#fff}.box{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}.cell{fill:#fff;stroke:#94a3b8}.row{fill:#bfdbfe}.col{fill:#ddd6fe}.out{fill:#bbf7d0}.txt{fill:#0f172a;font:23px system-ui,sans-serif}.small{fill:#334155;font:18px system-ui,sans-serif}@media(prefers-color-scheme:dark){.bg{fill:#17191f}.box{fill:#20242d;stroke:#475569}.cell{fill:#20242d;stroke:#64748b}.row{fill:#1e40af}.col{fill:#5b21b6}.out{fill:#166534}.txt{fill:#f8fafc}.small{fill:#cbd5e1}}</style>
+  <rect class="bg" width="1120" height="430" rx="14"/><text class="txt" x="560" y="38" text-anchor="middle">A(m×n) · B(n×p) = C(m×p)</text>
+  <g transform="translate(55 90)"><text class="txt" x="125" y="-15" text-anchor="middle">A</text><g>
+    <rect class="cell" x="0" y="0" width="80" height="65"/><rect class="cell" x="80" y="0" width="80" height="65"/><rect class="cell" x="160" y="0" width="80" height="65"/>
+    <rect class="row" x="0" y="65" width="80" height="65"/><rect class="row" x="80" y="65" width="80" height="65"/><rect class="row" x="160" y="65" width="80" height="65"/>
+    <rect class="cell" x="0" y="130" width="80" height="65"/><rect class="cell" x="80" y="130" width="80" height="65"/><rect class="cell" x="160" y="130" width="80" height="65"/>
+    <text class="small" x="40" y="107" text-anchor="middle">a₂₁</text><text class="small" x="120" y="107" text-anchor="middle">a₂₂</text><text class="small" x="200" y="107" text-anchor="middle">a₂₃</text></g></g>
+  <text class="txt" x="335" y="205">×</text>
+  <g transform="translate(390 90)"><text class="txt" x="160" y="-15" text-anchor="middle">B</text>
+    <rect class="cell" x="0" y="0" width="80" height="65"/><rect class="cell" x="80" y="0" width="80" height="65"/><rect class="col" x="160" y="0" width="80" height="65"/><rect class="cell" x="240" y="0" width="80" height="65"/>
+    <rect class="cell" x="0" y="65" width="80" height="65"/><rect class="cell" x="80" y="65" width="80" height="65"/><rect class="col" x="160" y="65" width="80" height="65"/><rect class="cell" x="240" y="65" width="80" height="65"/>
+    <rect class="cell" x="0" y="130" width="80" height="65"/><rect class="cell" x="80" y="130" width="80" height="65"/><rect class="col" x="160" y="130" width="80" height="65"/><rect class="cell" x="240" y="130" width="80" height="65"/>
+    <text class="small" x="200" y="42" text-anchor="middle">b₁₃</text><text class="small" x="200" y="107" text-anchor="middle">b₂₃</text><text class="small" x="200" y="172" text-anchor="middle">b₃₃</text>
+  </g><text class="txt" x="750" y="205">=</text>
+  <g transform="translate(805 90)"><text class="txt" x="125" y="-15" text-anchor="middle">C</text>
+    <rect class="cell" x="0" y="0" width="80" height="65"/><rect class="cell" x="80" y="0" width="80" height="65"/><rect class="cell" x="160" y="0" width="80" height="65"/>
+    <rect class="cell" x="0" y="65" width="80" height="65"/><rect class="cell" x="80" y="65" width="80" height="65"/><rect class="out" x="160" y="65" width="80" height="65"/>
+    <rect class="cell" x="0" y="130" width="80" height="65"/><rect class="cell" x="80" y="130" width="80" height="65"/><rect class="cell" x="160" y="130" width="80" height="65"/><text class="small" x="200" y="107" text-anchor="middle">c₂₃</text></g>
+  <text class="small" x="560" y="360" text-anchor="middle">c₂₃ = a₂₁b₁₃ + a₂₂b₂₃ + a₂₃b₃₃</text>
+</svg>

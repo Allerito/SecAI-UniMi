@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Numero complesso nel piano di Gauss</title>
+  <desc id="desc">Il punto z uguale a più ib è rappresentato da un vettore di modulo rho e argomento theta.</desc>
+  <style>
+    :root{color-scheme:light dark}.bg{fill:#fff}.grid{stroke:#e2e8f0;stroke-width:1}.axis{stroke:#334155;stroke-width:3}.guide{stroke:#94a3b8;stroke-width:2;stroke-dasharray:8 7}
+    .vector{stroke:#2563eb;stroke-width:5;fill:none;marker-end:url(#head)}.angle{stroke:#f97316;stroke-width:4;fill:none}.point{fill:#7c3aed}.txt{fill:#0f172a;font:23px system-ui,sans-serif}.small{fill:#334155;font:19px system-ui,sans-serif}
+    @media(prefers-color-scheme:dark){.bg{fill:#17191f}.grid{stroke:#343946}.axis{stroke:#e2e8f0}.guide{stroke:#64748b}.txt{fill:#f8fafc}.small{fill:#cbd5e1}.vector{stroke:#60a5fa}.point{fill:#c4b5fd}}
+  </style>
+  <defs><marker id="head" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#2563eb"/></marker></defs>
+  <rect class="bg" width="900" height="560" rx="14"/>
+  <g>
+    <path class="grid" d="M100 100H820M100 180H820M100 260H820M100 340H820M100 420H820M180 60V500M260 60V500M340 60V500M420 60V500M500 60V500M580 60V500M660 60V500M740 60V500"/>
+    <path class="axis" d="M70 340H850M340 520V40"/><path class="axis" d="m850 340-14-8v16zM340 40l-8 14h16z"/>
+    <text class="txt" x="790" y="325">Re</text><text class="txt" x="355" y="72">Im</text>
+    <path class="guide" d="M660 140V340M340 140H660"/><path class="vector" d="M340 340L660 140"/>
+    <circle class="point" cx="660" cy="140" r="9"/><text class="txt" x="678" y="132">z = a + ib</text>
+    <text class="small" x="650" y="368">a</text><text class="small" x="310" y="148">b</text>
+    <path class="angle" d="M430 340A90 90 0 0 0 416 292"/><text class="txt" x="433" y="294">θ</text>
+    <text class="txt" x="505" y="215" transform="rotate(-32 505 215)">ρ = |z|</text>
+    <text class="small" x="450" y="535" text-anchor="middle">a = ρ cos θ,   b = ρ sin θ</text>
+  </g>
+</svg>
