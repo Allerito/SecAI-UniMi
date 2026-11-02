@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">Studio di dominio, zeri e segno nel piano cartesiano</title>
+  <desc id="desc">Rappresentazione delle regioni escluse nel piano cartesiano in base allo studio del segno di una funzione f(x), con gli zeri sull'asse x e gli asintoti verticali.</desc>
+  <style>
+    
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --panel: #f8fafc;
+      --border: #cbd5e1;
+      --grid: #e2e8f0;
+      --axis: #334155;
+      --txt: #0f172a;
+      --sub: #334155;
+      --blue: #0284c7;
+      --purple: #7c3aed;
+      --red: #e11d48;
+      --orange: #d97706;
+      --green: #16a34a;
+      --muted: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161618;
+        --panel: #1e2028;
+        --border: #3f4454;
+        --grid: #2c303d;
+        --axis: #cbd5e1;
+        --txt: #f8fafc;
+        --sub: #cbd5e1;
+        --blue: #38bdf8;
+        --purple: #a78bfa;
+        --red: #fb7185;
+        --orange: #fbbf24;
+        --green: #4ade80;
+        --muted: #94a3b8;
+      }
+    }
+    .bg { fill: var(--bg); }
+    .panel { fill: var(--panel); stroke: var(--border); stroke-width: 1.5; }
+    .grid { stroke: var(--grid); stroke-width: 1; stroke-dasharray: 4 4; }
+    .axis { stroke: var(--axis); stroke-width: 2; fill: none; }
+    . guide, .dash { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+    .asym { stroke: var(--red); stroke-width: 2; stroke-dasharray: 6 4; fill: none; }
+    .hline { stroke: var(--orange); stroke-width: 2.2; stroke-dasharray: 6 4; fill: none; }
+    .c-blue { stroke: var(--blue); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-purple { stroke: var(--purple); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-red { stroke: var(--red); fill: none; stroke-width: 3.8; stroke-linecap: round; stroke-linejoin: round; }
+    .c-green { stroke: var(--green); fill: none; stroke-width: 3.5; stroke-dasharray: 7 4; stroke-linecap: round; }
+    .pt { fill: var(--bg); stroke: var(--green); stroke-width: 3.2; }
+    .pt-red { fill: var(--bg); stroke: var(--red); stroke-width: 3.2; }
+    .txt { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .title-bg { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; }
+    .sub { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .caption { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; }
+
+    .excl { fill: #cbd5e1; fill-opacity: 0.55; }
+    .valid { fill: #dcfce7; fill-opacity: 0.45; }
+    @media (prefers-color-scheme: dark) {
+      .excl { fill: #334155; fill-opacity: 0.55; }
+      .valid { fill: #14532d; fill-opacity: 0.3; }
+    }
+  </style>
+  <rect class="bg" width="900" height="360" rx="12"/>
+  <g transform="translate(24 20)">
+    <rect class="panel" width="852" height="320" rx="10"/>
+    <text class="txt" x="24" y="32">Lettura del piano cartesiano tramite Dominio, Zeri e Segno</text>
+
+    <rect class="valid" x="65" y="52" width="200" height="123"/>
+    <rect class="excl" x="65" y="175" width="200" height="100"/>
+
+    <rect class="excl" x="265" y="52" width="190" height="123"/>
+    <rect class="valid" x="265" y="175" width="190" height="100"/>
+
+    <rect class="valid" x="455" y="52" width="310" height="123"/>
+    <rect class="excl" x="455" y="175" width="310" height="100"/>
+
+    <line class="axis" x1="50" y1="175" x2="785" y2="175"/>
+    <line class="axis" x1="170" y1="280" x2="170" y2="48"/>
+    <line class="dash" x1="265" y1="52" x2="265" y2="275"/>
+    <line class="asym" x1="455" y1="52" x2="455" y2="275"/>
+
+    <path class="c-blue" d="M70.25 150.7 L73.67 150.92 L77.09 151.13 L80.51 151.35 L83.93 151.58 L87.35 151.81 L90.77 152.04 L94.19 152.28 L97.61 152.52 L101.03 152.76 L104.45 153.02 L107.87 153.27 L111.29 153.53 L114.71 153.8 L118.13 154.07 L121.55 154.35 L124.97 154.63 L128.39 154.92 L131.81 155.22 L135.23 155.52 L138.65 155.83 L142.07 156.14 L145.49 156.47 L148.91 156.8 L152.33 157.13 L155.75 157.48 L159.17 157.83 L162.59 158.19 L166.01 158.56 L169.43 158.94 L172.85 159.32 L176.27 159.72 L179.69 160.13 L183.11 160.54 L186.53 160.97 L189.95 161.41 L193.37 161.86 L196.79 162.32 L200.21 162.79 L203.63 163.28 L207.05 163.78 L210.47 164.3 L213.89 164.83 L217.31 165.37 L220.73 165.93 L224.15 166.51 L227.57 167.1 L230.99 167.71 L234.41 168.34 L237.83 168.99 L241.25 169.67 L244.67 170.36 L248.09 171.08 L251.51 171.82 L254.93 172.58 L258.35 173.38 L261.77 174.2 L265.19 175.05 L268.61 175.93 L272.03 176.84 L275.45 177.79 L278.87 178.78 L282.29 179.81 L285.71 180.87 L289.13 181.98 L292.55 183.14 L295.97 184.35 L299.39 185.61 L302.81 186.93 L306.23 188.3 L309.65 189.75 L313.07 191.26 L316.49 192.84 L319.91 194.51 L323.33 196.26 L326.75 198.11 L330.17 200.06 L333.59 202.12 L337.01 204.29 L340.43 206.6 L343.85 209.05 L347.27 211.66 L350.69 214.43 L354.11 217.4 L357.53 220.57 L360.95 223.97 L364.37 227.63 L367.79 231.58 L371.21 235.84 L374.63 240.48 L378.05 245.52 L381.47 251.03 L384.89 257.08 L388.31 263.75 L391.73 271.14 L395.15 279.38 L398.57 288.62 L401.99 299.04 L405.41 310.91 L408.83 324.53 L412.25 340.33"/>
+    <path class="c-blue" d="M497.75 -86.33 L500.96 -71.45 L504.16 -58.51 L507.37 -47.15 L510.57 -37.1 L513.78 -28.15 L516.99 -20.13 L520.19 -12.89 L523.4 -6.33 L526.61 -0.36 L529.81 5.1 L533.02 10.11 L536.23 14.72 L539.43 18.98 L542.64 22.93 L545.84 26.61 L549.05 30.03 L552.26 33.23 L555.46 36.22 L558.67 39.03 L561.88 41.67 L565.08 44.15 L568.29 46.5 L571.49 48.71 L574.7 50.81 L577.91 52.8 L581.11 54.68 L584.32 56.48 L587.53 58.18 L590.73 59.81 L593.94 61.36 L597.14 62.84 L600.35 64.25 L603.56 65.61 L606.76 66.91 L609.97 68.15 L613.17 69.34 L616.38 70.49 L619.59 71.59 L622.79 72.65 L626 73.67 L629.21 74.65 L632.41 75.59 L635.62 76.51 L638.83 77.39 L642.03 78.24 L645.24 79.06 L648.44 79.85 L651.65 80.62 L654.86 81.37 L658.06 82.09 L661.27 82.79 L664.48 83.46 L667.68 84.12 L670.89 84.76 L674.09 85.37 L677.3 85.97 L680.51 86.56 L683.71 87.12 L686.92 87.68 L690.13 88.21 L693.33 88.73 L696.54 89.24 L699.74 89.74 L702.95 90.22 L706.16 90.69 L709.36 91.15 L712.57 91.59 L715.78 92.03 L718.98 92.45 L722.19 92.87 L725.39 93.27 L728.6 93.67 L731.81 94.05 L735.01 94.43 L738.22 94.8 L741.43 95.16 L744.63 95.51 L747.84 95.86 L751.04 96.19 L754.25 96.52"/>
+
+    <circle class="pt" cx="170" cy="159" r="5"/>
+    <circle class="pt" cx="265" cy="175" r="6"/>
+
+    <text class="sub" x="165" y="78" text-anchor="middle">f(x) &gt; 0 (ammessa)</text>
+    <text class="sub" x="165" y="242" text-anchor="middle">Regione esclusa</text>
+
+    <text class="sub" x="360" y="105" text-anchor="middle">Regione esclusa</text>
+    <text class="sub" x="360" y="242" text-anchor="middle">f(x) &lt; 0 (ammessa)</text>
+
+    <text class="sub" x="610" y="78" text-anchor="middle">f(x) &gt; 0 (ammessa)</text>
+    <text class="sub" x="610" y="242" text-anchor="middle">Regione esclusa</text>
+
+    <text class="sub" x="273" y="165" text-anchor="start">Zero x₁</text>
+    <text class="sub" x="465" y="268" text-anchor="start">x = a (C.E.: x ≠ a)</text>
+    <text class="caption" x="426" y="302" text-anchor="middle">Dove f(x) &gt; 0 si esclude la parte sotto l'asse x; dove f(x) &lt; 0 si esclude la parte sopra l'asse x.</text>
+  </g>
+</svg>

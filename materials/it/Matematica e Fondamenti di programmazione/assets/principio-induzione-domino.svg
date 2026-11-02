@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 410" role="img" aria-labelledby="title desc">
+  <title id="title">Il principio di induzione come una catena di domino</title>
+  <desc id="desc">Il passo base avvia la catena; l'implicazione da P di k a P di k più uno garantisce che il processo prosegua.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill: #ffffff; }
+    .ground { stroke: #64748b; stroke-width: 4; stroke-linecap: round; }
+    .tile { fill: #60a5fa; fill-opacity: 0.85; stroke: #1d4ed8; stroke-width: 3; }
+    .next { fill: #a78bfa; fill-opacity: 0.85; stroke: #7c3aed; stroke-width: 3; }
+    .arrow { stroke: #f97316; stroke-width: 4.5; fill: none; marker-end: url(#head); stroke-linecap: round; }
+    .txt { fill: #0f172a; font: 600 22px system-ui, sans-serif; }
+    .small { fill: #334155; font: 600 18px system-ui, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #17191f; }
+      .ground { stroke: #94a3b8; }
+      .tile { fill: #1e40af; stroke: #60a5fa; }
+      .next { fill: #5b21b6; stroke: #c4b5fd; }
+      .txt { fill: #f8fafc; }
+      .small { fill: #cbd5e1; }
+    }
+  </style>
+  <defs>
+    <marker id="head" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0 0.5 L8 3.5 L0 6.5 Z" fill="#f97316"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1100" height="410" rx="14"/>
+
+  <g transform="translate(95 0) rotate(22 75 310)">
+    <rect class="tile" x="0" y="125" width="75" height="185" rx="8"/>
+    <text class="txt" x="37.5" y="225" text-anchor="middle">P(n₀)</text>
+  </g>
+  <g transform="translate(310 0) rotate(14 75 310)">
+    <rect class="tile" x="0" y="125" width="75" height="185" rx="8"/>
+    <text class="txt" x="37.5" y="225" text-anchor="middle">P(k)</text>
+  </g>
+  <g transform="translate(535 0) rotate(7 82 310)">
+    <rect class="next" x="0" y="125" width="82" height="185" rx="8"/>
+    <text class="txt" x="41" y="225" text-anchor="middle">P(k+1)</text>
+  </g>
+  <g transform="translate(760 0)">
+    <rect class="tile" x="0" y="125" width="75" height="185" rx="8"/>
+    <text class="txt" x="37.5" y="225" text-anchor="middle">…</text>
+  </g>
+  <g transform="translate(940 0)">
+    <rect class="tile" x="0" y="125" width="75" height="185" rx="8"/>
+    <text class="txt" x="37.5" y="225" text-anchor="middle">P(n)</text>
+  </g>
+
+  <path class="ground" d="M45 310H1055"/>
+
+  <path class="arrow" d="M 190 102 Q 265 55 340 102"/>
+  <text class="small" x="265" y="48" text-anchor="middle">Passo base: P(n₀) vera</text>
+
+  <path class="arrow" d="M 405 102 Q 485 55 565 102"/>
+  <text class="small" x="485" y="48" text-anchor="middle">Passo induttivo: P(k) ⟹ P(k+1)</text>
+
+  <path class="arrow" d="M 635 102 Q 710 60 785 102"/>
+  <text class="small" x="550" y="365" text-anchor="middle">Passo base + passo induttivo valido per ogni k ≥ n₀ ⟹ P(n) vera per ogni n ≥ n₀</text>
+</svg>
