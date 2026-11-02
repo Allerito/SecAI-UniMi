@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 350" role="img" aria-labelledby="title desc">
+  <title id="title">Simmetrie di funzioni pari, dispari e traslazioni</title>
+  <desc id="desc">Tre pannelli: funzione pari simmetrica rispetto all'asse y, funzione dispari simmetrica rispetto all'origine, e traslazione di un grafico secondo un vettore.</desc>
+  <style>
+    
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --panel: #f8fafc;
+      --border: #cbd5e1;
+      --grid: #e2e8f0;
+      --axis: #334155;
+      --txt: #0f172a;
+      --sub: #334155;
+      --blue: #0284c7;
+      --purple: #7c3aed;
+      --red: #e11d48;
+      --orange: #d97706;
+      --green: #16a34a;
+      --muted: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161618;
+        --panel: #1e2028;
+        --border: #3f4454;
+        --grid: #2c303d;
+        --axis: #cbd5e1;
+        --txt: #f8fafc;
+        --sub: #cbd5e1;
+        --blue: #38bdf8;
+        --purple: #a78bfa;
+        --red: #fb7185;
+        --orange: #fbbf24;
+        --green: #4ade80;
+        --muted: #94a3b8;
+      }
+    }
+    .bg { fill: var(--bg); }
+    .panel { fill: var(--panel); stroke: var(--border); stroke-width: 1.5; }
+    .grid { stroke: var(--grid); stroke-width: 1; stroke-dasharray: 4 4; }
+    .axis { stroke: var(--axis); stroke-width: 2; fill: none; }
+    . guide, .dash { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+    .asym { stroke: var(--red); stroke-width: 2; stroke-dasharray: 6 4; fill: none; }
+    .hline { stroke: var(--orange); stroke-width: 2.2; stroke-dasharray: 6 4; fill: none; }
+    .c-blue { stroke: var(--blue); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-purple { stroke: var(--purple); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-red { stroke: var(--red); fill: none; stroke-width: 3.8; stroke-linecap: round; stroke-linejoin: round; }
+    .c-green { stroke: var(--green); fill: none; stroke-width: 3.5; stroke-dasharray: 7 4; stroke-linecap: round; }
+    .pt { fill: var(--bg); stroke: var(--green); stroke-width: 3.2; }
+    .pt-red { fill: var(--bg); stroke: var(--red); stroke-width: 3.2; }
+    .txt { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .title-bg { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; }
+    .sub { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .caption { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; }
+
+    .c-base { stroke: var(--red); fill: none; stroke-width: 3.2; stroke-dasharray: 6 4; }
+    .vec { stroke: var(--orange); stroke-width: 2.5; fill: none; marker-end: url(#arr-v); }
+  </style>
+  <defs>
+    <marker id="arr-v" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 1 L 7 4 L 0 7 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="960" height="350" rx="12"/>
+
+  <g transform="translate(20 20)">
+    <rect class="panel" width="292" height="310" rx="10"/>
+    <text class="txt" x="146" y="30" text-anchor="middle">Funzione Pari: f(-x) = f(x)</text>
+    <line class="dash" x1="81.6" y1="159.94" x2="210.4" y2="159.94"/>
+    <line class="dash" x1="81.6" y1="159.94" x2="81.6" y2="185"/>
+    <line class="dash" x1="210.4" y1="159.94" x2="210.4" y2="185"/>
+    <line class="axis" x1="25" y1="185" x2="267" y2="185"/>
+    <line class="axis" x1="146" y1="250" x2="146" y2="52"/>
+    <path class="c-blue" d="M49.4 102.61 L51.82 107.7 L54.23 112.67 L56.64 117.5 L59.06 122.21 L61.47 126.79 L63.89 131.24 L66.31 135.56 L68.72 139.76 L71.14 143.82 L73.55 147.75 L75.97 151.56 L78.38 155.23 L80.8 158.78 L83.21 162.2 L85.63 165.49 L88.04 168.65 L90.45 171.68 L92.87 174.58 L95.28 177.36 L97.7 180 L100.11 182.52 L102.53 184.9 L104.94 187.16 L107.36 189.29 L109.78 191.29 L112.19 193.16 L114.6 194.9 L117.02 196.51 L119.44 198 L121.85 199.35 L124.27 200.58 L126.68 201.67 L129.09 202.64 L131.51 203.48 L133.92 204.19 L136.34 204.77 L138.75 205.22 L141.17 205.54 L143.59 205.74 L146 205.8 L148.42 205.74 L150.83 205.54 L153.24 205.22 L155.66 204.77 L158.07 204.19 L160.49 203.48 L162.91 202.64 L165.32 201.67 L167.74 200.58 L170.15 199.35 L172.56 198 L174.98 196.51 L177.4 194.9 L179.81 193.16 L182.22 191.29 L184.64 189.29 L187.06 187.16 L189.47 184.9 L191.88 182.52 L194.3 180 L196.71 177.36 L199.13 174.58 L201.55 171.68 L203.96 168.65 L206.38 165.49 L208.79 162.2 L211.21 158.78 L213.62 155.23 L216.03 151.56 L218.45 147.75 L220.87 143.82 L223.28 139.76 L225.7 135.56 L228.11 131.24 L230.52 126.79 L232.94 122.21 L235.36 117.5 L237.77 112.67 L240.19 107.7 L242.6 102.61"/>
+    <circle class="pt" cx="81.6" cy="159.94" r="5"/>
+    <circle class="pt" cx="210.4" cy="159.94" r="5"/>
+    <text class="sub" x="81.6" y="203" text-anchor="middle">-x</text>
+    <text class="sub" x="210.4" y="203" text-anchor="middle">x</text>
+    <text class="caption" x="146" y="290" text-anchor="middle">Simmetria rispetto all'asse y</text>
+  </g>
+
+  <g transform="translate(334 20)">
+    <rect class="panel" width="292" height="310" rx="10"/>
+    <text class="txt" x="146" y="30" text-anchor="middle">Funzione Dispari: f(-x) = -f(x)</text>
+    <line class="dash" x1="74" y1="192.13" x2="218" y2="117.88"/>
+    <line class="dash" x1="74" y1="192.13" x2="74" y2="155"/>
+    <line class="dash" x1="218" y1="117.88" x2="218" y2="155"/>
+    <line class="axis" x1="25" y1="155" x2="267" y2="155"/>
+    <line class="axis" x1="146" y1="250" x2="146" y2="52"/>
+    <path class="c-purple" d="M52.4 236.56 L54.74 230.6 L57.08 224.93 L59.42 219.55 L61.76 214.46 L64.1 209.64 L66.44 205.09 L68.78 200.8 L71.12 196.76 L73.46 192.97 L75.8 189.41 L78.14 186.08 L80.48 182.98 L82.82 180.08 L85.16 177.4 L87.5 174.91 L89.84 172.62 L92.18 170.51 L94.52 168.57 L96.86 166.8 L99.2 165.2 L101.54 163.74 L103.88 162.43 L106.22 161.26 L108.56 160.22 L110.9 159.3 L113.24 158.5 L115.58 157.8 L117.92 157.2 L120.26 156.7 L122.6 156.27 L124.94 155.93 L127.28 155.65 L129.62 155.44 L131.96 155.28 L134.3 155.16 L136.64 155.08 L138.98 155.03 L141.32 155.01 L143.66 155 L146 155 L148.34 155 L150.68 154.99 L153.02 154.97 L155.36 154.92 L157.7 154.84 L160.04 154.72 L162.38 154.56 L164.72 154.35 L167.06 154.07 L169.4 153.73 L171.74 153.3 L174.08 152.8 L176.42 152.2 L178.76 151.5 L181.1 150.7 L183.44 149.78 L185.78 148.74 L188.12 147.57 L190.46 146.26 L192.8 144.8 L195.14 143.2 L197.48 141.43 L199.82 139.49 L202.16 137.38 L204.5 135.09 L206.84 132.6 L209.18 129.92 L211.52 127.02 L213.86 123.92 L216.2 120.59 L218.54 117.03 L220.88 113.24 L223.22 109.2 L225.56 104.91 L227.9 100.36 L230.24 95.54 L232.58 90.45 L234.92 85.07 L237.26 79.4 L239.6 73.44"/>
+    <circle class="pt" cx="74" cy="192.13" r="5"/>
+    <circle class="pt" cx="146" cy="155" r="4.5"/>
+    <circle class="pt" cx="218" cy="117.88" r="5"/>
+    <text class="sub" x="74" y="147" text-anchor="middle">-x</text>
+    <text class="sub" x="218" y="173" text-anchor="middle">x</text>
+    <text class="caption" x="146" y="290" text-anchor="middle">Simmetria rispetto all'origine O</text>
+  </g>
+
+  <g transform="translate(648 20)">
+    <rect class="panel" width="292" height="310" rx="10"/>
+    <text class="txt" x="146" y="30" text-anchor="middle">Traslazione: y = f(x - a) + b</text>
+    <line class="axis" x1="25" y1="205" x2="267" y2="205"/>
+    <line class="axis" x1="100" y1="250" x2="100" y2="52"/>
+    <path class="c-base" d="M34 150.55 L36.2 154.12 L38.4 157.57 L40.6 160.9 L42.8 164.1 L45 167.19 L47.2 170.15 L49.4 173 L51.6 175.72 L53.8 178.32 L56 180.8 L58.2 183.16 L60.4 185.4 L62.6 187.52 L64.8 189.51 L67 191.39 L69.2 193.14 L71.4 194.78 L73.6 196.29 L75.8 197.68 L78 198.95 L80.2 200.1 L82.4 201.13 L84.6 202.04 L86.8 202.82 L89 203.49 L91.2 204.03 L93.4 204.46 L95.6 204.76 L97.8 204.94 L100 205 L102.2 204.94 L104.4 204.76 L106.6 204.46 L108.8 204.03 L111 203.49 L113.2 202.82 L115.4 202.04 L117.6 201.13 L119.8 200.1 L122 198.95 L124.2 197.68 L126.4 196.29 L128.6 194.78 L130.8 193.14 L133 191.39 L135.2 189.51 L137.4 187.52 L139.6 185.4 L141.8 183.16 L144 180.8 L146.2 178.32 L148.4 175.72 L150.6 173 L152.8 170.15 L155 167.19 L157.2 164.1 L159.4 160.9 L161.6 157.57 L163.8 154.12 L166 150.55"/>
+    <path class="c-blue" d="M113.2 110.95 L115.4 114.52 L117.6 117.97 L119.8 121.3 L122 124.5 L124.2 127.59 L126.4 130.55 L128.6 133.4 L130.8 136.12 L133 138.72 L135.2 141.2 L137.4 143.56 L139.6 145.8 L141.8 147.92 L144 149.91 L146.2 151.79 L148.4 153.54 L150.6 155.18 L152.8 156.69 L155 158.08 L157.2 159.35 L159.4 160.5 L161.6 161.53 L163.8 162.44 L166 163.22 L168.2 163.89 L170.4 164.43 L172.6 164.86 L174.8 165.16 L177 165.34 L179.2 165.4 L181.4 165.34 L183.6 165.16 L185.8 164.86 L188 164.43 L190.2 163.89 L192.4 163.22 L194.6 162.44 L196.8 161.53 L199 160.5 L201.2 159.35 L203.4 158.08 L205.6 156.69 L207.8 155.18 L210 153.54 L212.2 151.79 L214.4 149.91 L216.6 147.92 L218.8 145.8 L221 143.56 L223.2 141.2 L225.4 138.72 L227.6 136.12 L229.8 133.4 L232 130.55 L234.2 127.59 L236.4 124.5 L238.6 121.3 L240.8 117.97 L243 114.52 L245.2 110.95"/>
+    <line class="vec" x1="100" y1="205" x2="174.2" y2="168.4"/>
+    <circle class="pt" cx="100" cy="205" r="4.5"/>
+    <circle class="pt" cx="179.2" cy="165.4" r="5"/>
+    <text class="sub" x="189.2" y="170.4" text-anchor="start">V'(a, b)</text>
+    <text class="caption" x="146" y="272" text-anchor="middle">Vettore v = (a, b)</text>
+    <text class="caption" x="146" y="292" text-anchor="middle">Spostamento (+a, +b)</text>
+  </g>
+</svg>

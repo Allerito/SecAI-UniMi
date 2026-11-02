@@ -26,6 +26,7 @@ Gli appunti sono organizzati in due percorsi: prima i prerequisiti, poi gli argo
 2. [[2 - Fondamenti di algebra, campo reale e campo complesso/2.2.1 - Relazioni di ordine e di equivalenza|2.2.1 - Relazioni di ordine e di equivalenza]]
 3. [[2 - Fondamenti di algebra, campo reale e campo complesso/2.3.1 - Il principio di induzione|2.3.1 - Il principio di induzione]]
 4. [[2 - Fondamenti di algebra, campo reale e campo complesso/2.4.1 - Il campo complesso|2.4.1 - Il campo complesso]]
+5. [[2 - Fondamenti di algebra, campo reale e campo complesso/2.6.1 - Funzioni e applicazioni|2.6.1 - Funzioni e applicazioni]]
 
 ## 3 - Vettori e geometria (sistemi lineari)
 
@@ -34,3 +35,11 @@ Gli appunti sono organizzati in due percorsi: prima i prerequisiti, poi gli argo
 3. [[3 - Vettori e geometria (sistemi lineari)/3.3.1 - Applicazioni lineari|3.3.1 - Applicazioni lineari]]
 4. [[3 - Vettori e geometria (sistemi lineari)/3.4.1 - Sistemi lineari|3.4.1 - Sistemi lineari]]
 5. [[3 - Vettori e geometria (sistemi lineari)/3.6.1 - Cenni di geometria dello spazio|3.6.1 - Cenni di geometria dello spazio]]
+
+## 4 - Proprietà e studio delle funzioni elementari
+
+1. [[4 - Proprietà e studio delle funzioni elementari/4.1.1 - Simmetrie e periodicità|4.1.1 - Simmetrie e periodicità]]
+2. [[4 - Proprietà e studio delle funzioni elementari/4.2.1 - Funzioni razionali e irrazionali|4.2.1 - Funzioni razionali e irrazionali]]
+3. [[4 - Proprietà e studio delle funzioni elementari/4.3.1 - Funzioni trigonometriche|4.3.1 - Funzioni trigonometriche]]
+4. [[4 - Proprietà e studio delle funzioni elementari/4.4.1 - Funzioni logaritmiche ed esponenziali|4.4.1 - Funzioni logaritmiche ed esponenziali]]
+5. [[4 - Proprietà e studio delle funzioni elementari/4.5.1 - Zeri e segno di una funzione|4.5.1 - Zeri e segno di una funzione]]

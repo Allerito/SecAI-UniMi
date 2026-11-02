@@ -1,12 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 570" role="img" aria-labelledby="title desc">
-  <title id="title">Retta e piano nello spazio</title><desc id="desc">Un piano è mostrato con due vettori generatori e un vettore normale; una retta parametrica attraversa lo spazio con il proprio vettore direzione.</desc>
-  <style>:root{color-scheme:light dark}.bg{fill:#fff}.plane{fill:#bfdbfe;fill-opacity:.62;stroke:#2563eb;stroke-width:3}.axis{stroke:#475569;stroke-width:3}.dir{stroke:#7c3aed;stroke-width:6;fill:none;marker-end:url(#p)}.normal{stroke:#f97316;stroke-width:6;fill:none;marker-end:url(#o)}.basis{stroke:#059669;stroke-width:5;fill:none;marker-end:url(#g)}.txt{fill:#0f172a;font:22px system-ui,sans-serif}.small{fill:#334155;font:18px system-ui,sans-serif}@media(prefers-color-scheme:dark){.bg{fill:#17191f}.plane{fill:#1e3a8a;fill-opacity:.7;stroke:#60a5fa}.axis{stroke:#cbd5e1}.dir{stroke:#c4b5fd}.normal{stroke:#fb923c}.basis{stroke:#34d399}.txt{fill:#f8fafc}.small{fill:#cbd5e1}}</style>
-  <defs><marker id="p" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#7c3aed"/></marker><marker id="o" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#f97316"/></marker><marker id="g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L9 3L0 6Z" fill="#059669"/></marker></defs>
-  <rect class="bg" width="1000" height="570" rx="14"/><text class="txt" x="500" y="42" text-anchor="middle">Geometria nello spazio</text>
-  <polygon class="plane" points="150,390 590,470 840,260 400,180"/><text class="txt" x="720" y="360">piano π</text>
-  <circle cx="430" cy="330" r="8" fill="#0f172a"/><text class="small" x="445" y="350">P</text>
-  <path class="basis" d="M430 330L650 370"/><path class="basis" d="M430 330L570 215"/><text class="small" x="640" y="400">u</text><text class="small" x="575" y="220">v</text>
-  <path class="normal" d="M430 330L430 95"/><text class="txt" x="450" y="120">n</text><path class="axis" d="M430 330l20 4l-4-20" fill="none"/>
-  <path class="dir" d="M95 480L850 95"/><text class="txt" x="790" y="105">retta r</text><text class="small" x="665" y="155">direzione d</text>
-  <text class="small" x="500" y="535" text-anchor="middle">π: n·(x−P)=0       r: x=Q+td</text>
+  <title id="title">Retta e piano nello spazio</title>
+  <desc id="desc">Un piano è mostrato con due vettori generatori u e v, il punto P e un vettore normale n; una retta parametrica r interseca il piano in Q con vettore direzione d.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill: #ffffff; }
+    .plane { fill: #bfdbfe; fill-opacity: 0.58; stroke: #2563eb; stroke-width: 3; stroke-linejoin: round; }
+    .axis { stroke: #475569; stroke-width: 2.5; fill: none; }
+    .line-r { stroke: #7c3aed; stroke-width: 3.5; fill: none; stroke-linecap: round; }
+    .line-r-dash { stroke: #7c3aed; stroke-width: 3.5; stroke-dasharray: 8 7; fill: none; stroke-linecap: round; }
+    .dir { stroke: #7c3aed; stroke-width: 6; fill: none; marker-end: url(#p); stroke-linecap: round; }
+    .normal { stroke: #f97316; stroke-width: 5.5; fill: none; marker-end: url(#o); stroke-linecap: round; }
+    .basis { stroke: #059669; stroke-width: 5; fill: none; marker-end: url(#g); stroke-linecap: round; }
+    .pt { fill: #0f172a; stroke: #ffffff; stroke-width: 2; }
+    .txt { fill: #0f172a; font: 600 22px system-ui, sans-serif; paint-order: stroke; stroke: #ffffff; stroke-width: 4px; }
+    .small { fill: #334155; font: 600 18px system-ui, sans-serif; paint-order: stroke; stroke: #ffffff; stroke-width: 4px; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #17191f; }
+      .plane { fill: #1e3a8a; fill-opacity: 0.65; stroke: #60a5fa; }
+      .axis { stroke: #cbd5e1; }
+      .line-r, .line-r-dash, .dir { stroke: #c4b5fd; }
+      .normal { stroke: #fb923c; }
+      .basis { stroke: #34d399; }
+      .pt { fill: #f8fafc; stroke: #17191f; }
+      .txt { fill: #f8fafc; stroke: #17191f; }
+      .small { fill: #cbd5e1; stroke: #17191f; }
+    }
+  </style>
+  <defs>
+    <marker id="p" markerWidth="9" markerHeight="9" refX="7.5" refY="3.5" orient="auto">
+      <path d="M0 0.5 L8 3.5 L0 6.5 Z" fill="context-stroke"/>
+    </marker>
+    <marker id="o" markerWidth="9" markerHeight="9" refX="7.5" refY="3.5" orient="auto">
+      <path d="M0 0.5 L8 3.5 L0 6.5 Z" fill="context-stroke"/>
+    </marker>
+    <marker id="g" markerWidth="9" markerHeight="9" refX="7.5" refY="3.5" orient="auto">
+      <path d="M0 0.5 L8 3.5 L0 6.5 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1000" height="570" rx="14"/>
+  <text class="txt" x="500" y="42" text-anchor="middle">Geometria nello spazio ℝ³: Piano π e Retta r</text>
+
+  <!-- Porzione di retta r sotto il piano (tratteggiata) -->
+  <path class="line-r-dash" d="M 560 470 L 670 305"/>
+
+  <!-- Piano pi -->
+  <polygon class="plane" points="120,390 580,470 860,250 400,170"/>
+  <text class="txt" x="235" y="380">piano π</text>
+
+  <!-- Angolo retto tra normale n e giacitura u -->
+  <path class="axis" d="M 380 306 L 404 310.2 L 404 334.2"/>
+
+  <!-- Vettori del piano P, u, v, n -->
+  <path class="basis" d="M 380 330 L 557 361"/>
+  <path class="basis" d="M 380 330 L 494 240"/>
+  <path class="normal" d="M 380 330 L 380 105"/>
+  <circle class="pt" cx="380" cy="330" r="7"/>
+
+  <text class="small" x="362" y="348" text-anchor="end">P</text>
+  <text class="small" x="568" y="375" text-anchor="start">u</text>
+  <text class="small" x="506" y="236" text-anchor="start">v</text>
+  <text class="txt" x="396" y="120" text-anchor="start">n (normale)</text>
+
+  <!-- Retta r sopra il piano con punto Q e vettore direzione d -->
+  <path class="line-r" d="M 670 305 L 820 80"/>
+  <path class="dir" d="M 670 305 L 754 179"/>
+  <circle class="pt" cx="670" cy="305" r="7"/>
+
+  <text class="small" x="652" y="312" text-anchor="end">Q</text>
+  <text class="small" x="768" y="188" text-anchor="start">direzione d</text>
+  <text class="txt" x="830" y="92" text-anchor="start">retta r</text>
+
+  <text class="small" x="500" y="535" text-anchor="middle">Piano π: n · (x − P) = 0   (oppure x = P + su + tv)         Retta r: x = Q + td</text>
 </svg>
