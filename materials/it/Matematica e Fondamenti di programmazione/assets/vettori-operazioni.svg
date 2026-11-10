@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Componenti, somma e prodotto scalare tra vettori</title>
+  <desc id="desc">Tre pannelli mostrano le componenti cartesiane di un vettore, la regola del parallelogramma e l'angolo collegato al prodotto scalare.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill: #ffffff; }
+    .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 2; }
+    .axis { stroke: #475569; stroke-width: 2; }
+    .guide { stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 7 6; fill: none; }
+    .u { stroke: #2563eb; stroke-width: 5; fill: none; marker-end: url(#bu); stroke-linecap: round; }
+    .v { stroke: #7c3aed; stroke-width: 5; fill: none; marker-end: url(#pv); stroke-linecap: round; }
+    .sum { stroke: #059669; stroke-width: 5; fill: none; marker-end: url(#gs); stroke-linecap: round; }
+    .angle { stroke: #f97316; stroke-width: 4; fill: none; }
+    .txt { fill: #0f172a; font: 600 22px system-ui, sans-serif; paint-order: stroke; stroke: #f8fafc; stroke-width: 4px; }
+    .small { fill: #334155; font: 600 18px system-ui, sans-serif; paint-order: stroke; stroke: #f8fafc; stroke-width: 4px; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #17191f; }
+      .panel { fill: #20242d; stroke: #475569; }
+      .axis { stroke: #cbd5e1; }
+      .guide { stroke: #64748b; }
+      .txt { fill: #f8fafc; stroke: #20242d; }
+      .small { fill: #cbd5e1; stroke: #20242d; }
+      .u { stroke: #60a5fa; }
+      .v { stroke: #c4b5fd; }
+      .sum { stroke: #34d399; }
+    }
+  </style>
+  <defs>
+    <marker id="bu" markerWidth="9" markerHeight="9" refX="7.5" refY="3.5" orient="auto">
+      <path d="M0 0.5 L8 3.5 L0 6.5 Z" fill="context-stroke"/>
+    </marker>
+    <marker id="pv" markerWidth="9" markerHeight="9" refX="7.5" refY="3.5" orient="auto">
+      <path d="M0 0.5 L8 3.5 L0 6.5 Z" fill="context-stroke"/>
+    </marker>
+    <marker id="gs" markerWidth="9" markerHeight="9" refX="7.5" refY="3.5" orient="auto">
+      <path d="M0 0.5 L8 3.5 L0 6.5 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="430" rx="14"/>
+
+  <g transform="translate(15 15)">
+    <rect class="panel" width="380" height="400" rx="12"/>
+    <text class="txt" x="190" y="38" text-anchor="middle">Componenti cartesiane</text>
+    <path class="axis" d="M50 330H345M85 360V75"/>
+    <path class="guide" d="M300 130V330M85 130H300"/>
+    <path class="u" d="M85 330L300 130"/>
+    <text class="small" x="300" y="356" text-anchor="middle">a</text>
+    <text class="small" x="70" y="136" text-anchor="end">b</text>
+    <text class="small" x="175" y="210" text-anchor="end">v = (a, b)</text>
+  </g>
+
+  <g transform="translate(410 15)">
+    <rect class="panel" width="380" height="400" rx="12"/>
+    <text class="txt" x="190" y="38" text-anchor="middle">Somma (Parallelogramma)</text>
+    <path class="guide" d="M215 280L290 110M140 160L290 110"/>
+    <path class="u" d="M65 330L215 280"/>
+    <path class="v" d="M65 330L140 160"/>
+    <path class="sum" d="M65 330L290 110"/>
+    <text class="small" x="150" y="324" text-anchor="middle">u</text>
+    <text class="small" x="86" y="235" text-anchor="end">v</text>
+    <text class="small" x="205" y="228" text-anchor="start">u + v</text>
+  </g>
+
+  <g transform="translate(805 15)">
+    <rect class="panel" width="380" height="400" rx="12"/>
+    <text class="txt" x="190" y="38" text-anchor="middle">Prodotto scalare</text>
+    <path class="angle" d="M 145 330 A 75 75 0 0 0 123.03 276.97"/>
+    <path class="u" d="M70 330L325 330"/>
+    <path class="v" d="M70 330L265 135"/>
+    <text class="txt" x="166" y="295" text-anchor="middle">θ</text>
+    <text class="small" x="285" y="356" text-anchor="middle">u</text>
+    <text class="small" x="155" y="215" text-anchor="end">v</text>
+    <text class="small" x="190" y="380" text-anchor="middle">u · v = ‖u‖ ‖v‖ cos θ</text>
+  </g>
+</svg>

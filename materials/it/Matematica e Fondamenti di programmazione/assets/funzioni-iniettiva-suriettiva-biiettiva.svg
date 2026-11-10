@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 350" role="img" aria-labelledby="title desc">
+  <title id="title">Funzioni iniettive, suriettive e biiettive</title>
+  <desc id="desc">Tre diagrammi di Eulero-Venn con frecce orientate che illustrano una funzione iniettiva ma non suriettiva, una suriettiva ma non iniettiva, e una biiettiva.</desc>
+  <style>
+    
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --panel: #f8fafc;
+      --border: #cbd5e1;
+      --grid: #e2e8f0;
+      --axis: #334155;
+      --txt: #0f172a;
+      --sub: #334155;
+      --blue: #0284c7;
+      --purple: #7c3aed;
+      --red: #e11d48;
+      --orange: #d97706;
+      --green: #16a34a;
+      --muted: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161618;
+        --panel: #1e2028;
+        --border: #3f4454;
+        --grid: #2c303d;
+        --axis: #cbd5e1;
+        --txt: #f8fafc;
+        --sub: #cbd5e1;
+        --blue: #38bdf8;
+        --purple: #a78bfa;
+        --red: #fb7185;
+        --orange: #fbbf24;
+        --green: #4ade80;
+        --muted: #94a3b8;
+      }
+    }
+    .bg { fill: var(--bg); }
+    .panel { fill: var(--panel); stroke: var(--border); stroke-width: 1.5; }
+    .grid { stroke: var(--grid); stroke-width: 1; stroke-dasharray: 4 4; }
+    .axis { stroke: var(--axis); stroke-width: 2; fill: none; }
+    . guide, .dash { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+    .asym { stroke: var(--red); stroke-width: 2; stroke-dasharray: 6 4; fill: none; }
+    .hline { stroke: var(--orange); stroke-width: 2.2; stroke-dasharray: 6 4; fill: none; }
+    .c-blue { stroke: var(--blue); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-purple { stroke: var(--purple); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-red { stroke: var(--red); fill: none; stroke-width: 3.8; stroke-linecap: round; stroke-linejoin: round; }
+    .c-green { stroke: var(--green); fill: none; stroke-width: 3.5; stroke-dasharray: 7 4; stroke-linecap: round; }
+    .pt { fill: var(--bg); stroke: var(--green); stroke-width: 3.2; }
+    .pt-red { fill: var(--bg); stroke: var(--red); stroke-width: 3.2; }
+    .txt { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .title-bg { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; }
+    .sub { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .caption { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; }
+
+    .setA { fill: #e0f2fe; fill-opacity: 0.7; stroke: var(--blue); stroke-width: 2.5; }
+    .setB { fill: #f3e8ff; fill-opacity: 0.7; stroke: var(--purple); stroke-width: 2.5; }
+    .arr { stroke: var(--axis); stroke-width: 2.2; fill: none; marker-end: url(#arrow); }
+    .dot { fill: var(--txt); }
+    .dot-free { fill: var(--red); }
+    @media (prefers-color-scheme: dark) {
+      .setA { fill: #0c4a6e; fill-opacity: 0.35; }
+      .setB { fill: #4c1d95; fill-opacity: 0.35; }
+    }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 1 L 7 4 L 0 7 Z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="960" height="350" rx="12"/>
+
+  <g transform="translate(20 20)">
+    <rect class="panel" width="292" height="310" rx="10"/>
+    <text class="txt" x="146" y="30" text-anchor="middle">Iniettiva (1-a-1)</text>
+    <text class="sub" x="82" y="64" text-anchor="middle">A</text>
+    <text class="sub" x="210" y="64" text-anchor="middle">B</text>
+    <ellipse class="setA" cx="82" cy="160" rx="42" ry="82"/>
+    <ellipse class="setB" cx="210" cy="160" rx="42" ry="82"/>
+    <circle class="dot" cx="82" cy="110" r="5"/>
+    <circle class="dot" cx="82" cy="160" r="5"/>
+    <circle class="dot" cx="82" cy="210" r="5"/>
+    <circle class="dot" cx="210" cy="100" r="5"/>
+    <circle class="dot" cx="210" cy="140" r="5"/>
+    <circle class="dot" cx="210" cy="180" r="5"/>
+    <circle class="dot-free" cx="210" cy="220" r="5"/>
+    <line class="arr" x1="89" y1="110" x2="201" y2="101"/>
+    <line class="arr" x1="89" y1="160" x2="201" y2="141"/>
+    <line class="arr" x1="89" y1="210" x2="201" y2="181"/>
+    <text class="caption" x="146" y="270" text-anchor="middle">x₁ ≠ x₂ ⟹ f(x₁) ≠ f(x₂)</text>
+    <text class="caption" x="146" y="292" text-anchor="middle">Ogni y ∈ B riceve al più 1 freccia</text>
+  </g>
+
+  <g transform="translate(334 20)">
+    <rect class="panel" width="292" height="310" rx="10"/>
+    <text class="txt" x="146" y="30" text-anchor="middle">Suriettiva (su tutto B)</text>
+    <text class="sub" x="82" y="64" text-anchor="middle">A</text>
+    <text class="sub" x="210" y="64" text-anchor="middle">B</text>
+    <ellipse class="setA" cx="82" cy="160" rx="42" ry="82"/>
+    <ellipse class="setB" cx="210" cy="160" rx="42" ry="82"/>
+    <circle class="dot" cx="82" cy="100" r="5"/>
+    <circle class="dot" cx="82" cy="140" r="5"/>
+    <circle class="dot" cx="82" cy="180" r="5"/>
+    <circle class="dot" cx="82" cy="220" r="5"/>
+    <circle class="dot" cx="210" cy="115" r="5"/>
+    <circle class="dot" cx="210" cy="160" r="5"/>
+    <circle class="dot" cx="210" cy="205" r="5"/>
+    <line class="arr" x1="89" y1="100" x2="201" y2="114"/>
+    <line class="arr" x1="89" y1="140" x2="201" y2="117"/>
+    <line class="arr" x1="89" y1="180" x2="201" y2="161"/>
+    <line class="arr" x1="89" y1="220" x2="201" y2="206"/>
+    <text class="caption" x="146" y="270" text-anchor="middle">Im(f) = B</text>
+    <text class="caption" x="146" y="292" text-anchor="middle">Ogni y ∈ B riceve almeno 1 freccia</text>
+  </g>
+
+  <g transform="translate(648 20)">
+    <rect class="panel" width="292" height="310" rx="10"/>
+    <text class="txt" x="146" y="30" text-anchor="middle">Biiettiva (invertibile)</text>
+    <text class="sub" x="82" y="64" text-anchor="middle">A</text>
+    <text class="sub" x="210" y="64" text-anchor="middle">B</text>
+    <ellipse class="setA" cx="82" cy="160" rx="42" ry="82"/>
+    <ellipse class="setB" cx="210" cy="160" rx="42" ry="82"/>
+    <circle class="dot" cx="82" cy="110" r="5"/>
+    <circle class="dot" cx="82" cy="160" r="5"/>
+    <circle class="dot" cx="82" cy="210" r="5"/>
+    <circle class="dot" cx="210" cy="110" r="5"/>
+    <circle class="dot" cx="210" cy="160" r="5"/>
+    <circle class="dot" cx="210" cy="210" r="5"/>
+    <line class="arr" x1="89" y1="110" x2="201" y2="110"/>
+    <line class="arr" x1="89" y1="160" x2="201" y2="160"/>
+    <line class="arr" x1="89" y1="210" x2="201" y2="210"/>
+    <text class="caption" x="146" y="270" text-anchor="middle">Iniettiva + Suriettiva</text>
+    <text class="caption" x="146" y="292" text-anchor="middle">Ogni y ∈ B riceve esattamente 1 freccia</text>
+  </g>
+</svg>

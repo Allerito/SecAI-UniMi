@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Tre possibili esiti di un sistema lineare</title>
+  <desc id="desc">Due rette incidenti rappresentano una soluzione unica, due parallele nessuna soluzione e due coincidenti infinite soluzioni.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill: #ffffff; }
+    .panel { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 2; }
+    .axis { stroke: #94a3b8; stroke-width: 2; }
+    .r1 { stroke: #2563eb; stroke-width: 5; stroke-linecap: round; }
+    .r2 { stroke: #f97316; stroke-width: 5; stroke-linecap: round; }
+    .point { fill: #059669; stroke: #ffffff; stroke-width: 2.5; }
+    .txt { fill: #0f172a; font: 600 23px system-ui, sans-serif; }
+    .small { fill: #334155; font: 600 18px system-ui, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #17191f; }
+      .panel { fill: #20242d; stroke: #475569; }
+      .axis { stroke: #475569; }
+      .txt { fill: #f8fafc; }
+      .small { fill: #cbd5e1; }
+      .r1 { stroke: #60a5fa; }
+      .r2 { stroke: #fb923c; }
+      .point { fill: #34d399; stroke: #17191f; }
+    }
+  </style>
+  <rect class="bg" width="1200" height="430" rx="14"/>
+  <g transform="translate(15 15)">
+    <rect class="panel" width="380" height="400" rx="12"/>
+    <text class="txt" x="190" y="40" text-anchor="middle">Sistema determinato (1 soluzione)</text>
+    <path class="axis" d="M45 330H340M75 355V75"/>
+    <path class="r1" d="M55 315L325 105"/>
+    <path class="r2" d="M55 95L325 325"/>
+    <circle class="point" cx="190" cy="210" r="8.5"/>
+    <text class="small" x="190" y="378" text-anchor="middle">due rette incidenti</text>
+  </g>
+  <g transform="translate(410 15)">
+    <rect class="panel" width="380" height="400" rx="12"/>
+    <text class="txt" x="190" y="40" text-anchor="middle">Sistema impossibile (0 soluzioni)</text>
+    <path class="axis" d="M45 330H340M75 355V75"/>
+    <path class="r1" d="M55 285L325 100"/>
+    <path class="r2" d="M55 345L325 160"/>
+    <text class="small" x="190" y="378" text-anchor="middle">due rette parallele distinte</text>
+  </g>
+  <g transform="translate(805 15)">
+    <rect class="panel" width="380" height="400" rx="12"/>
+    <text class="txt" x="190" y="40" text-anchor="middle">Sistema indeterminato (∞ soluzioni)</text>
+    <path class="axis" d="M45 330H340M75 355V75"/>
+    <path class="r2" d="M55 315L325 105"/>
+    <path class="r1" d="M55 315L325 105" stroke-dasharray="14 12"/>
+    <text class="small" x="190" y="378" text-anchor="middle">due rette coincidenti</text>
+  </g>
+</svg>

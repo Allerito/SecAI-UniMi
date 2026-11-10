@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" role="img" aria-labelledby="title desc">
+  <title id="title">Il discriminante e le intersezioni della parabola con l'asse x</title>
+  <desc id="desc">Tre grafici mostrano due intersezioni quando delta è positivo, una radice doppia quando delta è zero e nessuna intersezione quando delta è negativo.</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .bg { fill: #ffffff; }
+    .panel { fill: #f8fafc; stroke: #d0d5dd; stroke-width: 1.5; }
+    .axis { stroke: #344054; stroke-width: 2; }
+    .curve { stroke: #1677b8; fill: none; stroke-width: 4.5; stroke-linecap: round; }
+    .root { fill: #ffffff; stroke: #d05a32; stroke-width: 3.5; }
+    .txt { fill: #1d2939; font: 600 18px system-ui, sans-serif; }
+    .small { fill: #475467; font: 15px system-ui, sans-serif; paint-order: stroke; stroke: #f8fafc; stroke-width: 4px; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #17191f; }
+      .panel { fill: #20242d; stroke: #475467; }
+      .axis { stroke: #d0d5dd; }
+      .curve { stroke: #64b5e8; }
+      .root { fill: #17191f; stroke: #f08a67; }
+      .txt { fill: #f2f4f7; }
+      .small { fill: #d0d5dd; stroke: #20242d; }
+    }
+  </style>
+  <rect class="bg" width="900" height="330" rx="12"/>
+  <text class="txt" x="32" y="38">Δ = b² − 4ac determina le intersezioni con l’asse x</text>
+
+  <g transform="translate(28 62)" aria-label="Delta positivo">
+    <rect class="panel" width="264" height="238" rx="10"/>
+    <text class="txt" x="16" y="30">Δ &gt; 0</text>
+    <text class="small" x="248" y="30" text-anchor="end">due radici reali</text>
+    <path class="axis" d="M18 130H246 M132 50V212"/>
+    <path class="curve" d="M44 35.96 L46.93 46.32 L49.87 56.33 L52.8 65.99 L55.73 75.29 L58.67 84.25 L61.6 92.85 L64.53 101.11 L67.47 109.01 L70.4 116.56 L73.33 123.76 L76.27 130.61 L79.2 137.11 L82.13 143.25 L85.07 149.05 L88 154.49 L90.93 159.58 L93.87 164.32 L96.8 168.71 L99.73 172.75 L102.67 176.44 L105.6 179.78 L108.53 182.76 L111.47 185.4 L114.4 187.68 L117.33 189.61 L120.27 191.19 L123.2 192.42 L126.13 193.3 L129.07 193.82 L132 194 L134.93 193.82 L137.87 193.3 L140.8 192.42 L143.73 191.19 L146.67 189.61 L149.6 187.68 L152.53 185.4 L155.47 182.76 L158.4 179.78 L161.33 176.44 L164.27 172.75 L167.2 168.71 L170.13 164.32 L173.07 159.58 L176 154.49 L178.93 149.05 L181.87 143.25 L184.8 137.11 L187.73 130.61 L190.67 123.76 L193.6 116.56 L196.53 109.01 L199.47 101.11 L202.4 92.85 L205.33 84.25 L208.27 75.29 L211.2 65.99 L214.13 56.33 L217.07 46.32 L220 35.96"/>
+    <circle class="root" cx="76" cy="130" r="6"/>
+    <circle class="root" cx="188" cy="130" r="6"/>
+    <text class="small" x="68" y="154" text-anchor="middle">x₁</text>
+    <text class="small" x="196" y="154" text-anchor="middle">x₂</text>
+  </g>
+
+  <g transform="translate(318 62)" aria-label="Delta uguale a zero">
+    <rect class="panel" width="264" height="238" rx="10"/>
+    <text class="txt" x="16" y="30">Δ = 0</text>
+    <text class="small" x="248" y="30" text-anchor="end">radice doppia</text>
+    <path class="axis" d="M18 156H246 M132 50V212"/>
+    <path class="curve" d="M44 74 L46.93 79.38 L49.87 84.57 L52.8 89.58 L55.73 94.41 L58.67 99.06 L61.6 103.52 L64.53 107.8 L67.47 111.9 L70.4 115.82 L73.33 119.56 L76.27 123.11 L79.2 126.48 L82.13 129.67 L85.07 132.68 L88 135.5 L90.93 138.14 L93.87 140.6 L96.8 142.88 L99.73 144.98 L102.67 146.89 L105.6 148.62 L108.53 150.17 L111.47 151.54 L114.4 152.72 L117.33 153.72 L120.27 154.54 L123.2 155.18 L126.13 155.64 L129.07 155.91 L132 156 L134.93 155.91 L137.87 155.64 L140.8 155.18 L143.73 154.54 L146.67 153.72 L149.6 152.72 L152.53 151.54 L155.47 150.17 L158.4 148.62 L161.33 146.89 L164.27 144.98 L167.2 142.88 L170.13 140.6 L173.07 138.14 L176 135.5 L178.93 132.68 L181.87 129.67 L184.8 126.48 L187.73 123.11 L190.67 119.56 L193.6 115.82 L196.53 111.9 L199.47 107.8 L202.4 103.52 L205.33 99.06 L208.27 94.41 L211.2 89.58 L214.13 84.57 L217.07 79.38 L220 74"/>
+    <circle class="root" cx="132" cy="156" r="6"/>
+    <text class="small" x="148" y="178" text-anchor="start">x₀</text>
+  </g>
+
+  <g transform="translate(608 62)" aria-label="Delta negativo">
+    <rect class="panel" width="264" height="238" rx="10"/>
+    <text class="txt" x="16" y="30">Δ &lt; 0</text>
+    <text class="small" x="248" y="30" text-anchor="end">nessuna radice reale</text>
+    <path class="axis" d="M18 178H246 M132 50V212"/>
+    <path class="curve" d="M44 64 L46.93 68.98 L49.87 73.8 L52.8 78.44 L55.73 82.92 L58.67 87.22 L61.6 91.36 L64.53 95.33 L67.47 99.13 L70.4 102.76 L73.33 106.22 L76.27 109.52 L79.2 112.64 L82.13 115.6 L85.07 118.38 L88 121 L90.93 123.45 L93.87 125.73 L96.8 127.84 L99.73 129.78 L102.67 131.56 L105.6 133.16 L108.53 134.6 L111.47 135.86 L114.4 136.96 L117.33 137.89 L120.27 138.65 L123.2 139.24 L126.13 139.66 L129.07 139.92 L132 140 L134.93 139.92 L137.87 139.66 L140.8 139.24 L143.73 138.65 L146.67 137.89 L149.6 136.96 L152.53 135.86 L155.47 134.6 L158.4 133.16 L161.33 131.56 L164.27 129.78 L167.2 127.84 L170.13 125.73 L173.07 123.45 L176 121 L178.93 118.38 L181.87 115.6 L184.8 112.64 L187.73 109.52 L190.67 106.22 L193.6 102.76 L196.53 99.13 L199.47 95.33 L202.4 91.36 L205.33 87.22 L208.27 82.92 L211.2 78.44 L214.13 73.8 L217.07 68.98 L220 64"/>
+    <text class="small" x="132" y="226" text-anchor="middle">sempre sopra l’asse x (a &gt; 0)</text>
+  </g>
+</svg>

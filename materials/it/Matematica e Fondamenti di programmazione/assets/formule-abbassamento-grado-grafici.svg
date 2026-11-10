@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+  <title id="title">Confronto grafico delle formule di abbassamento di grado</title>
+  <desc id="desc">A sinistra la coincidenza tra y = sin²(x) e y = (1 - cos(2x))/2 nell'intervallo [0, 2π] in radianti; a destra la coincidenza tra y = cos²(x) e y = (1 + cos(2x))/2, entrambe con periodo π e valore medio y = 1/2.</desc>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --panel: #f8fafc;
+      --border: #cbd5e1;
+      --grid: #e2e8f0;
+      --axis: #334155;
+      --txt: #0f172a;
+      --sub: #334155;
+      --blue: #0284c7;
+      --purple: #7c3aed;
+      --red: #e11d48;
+      --orange: #d97706;
+      --green: #16a34a;
+      --muted: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161618;
+        --panel: #1e2028;
+        --border: #3f4454;
+        --grid: #2c303d;
+        --axis: #cbd5e1;
+        --txt: #f8fafc;
+        --sub: #cbd5e1;
+        --blue: #38bdf8;
+        --purple: #a78bfa;
+        --red: #fb7185;
+        --orange: #fbbf24;
+        --green: #4ade80;
+        --muted: #94a3b8;
+      }
+    }
+    .bg { fill: var(--bg); }
+    .panel { fill: var(--panel); stroke: var(--border); stroke-width: 1.5; }
+    .grid { stroke: var(--grid); stroke-width: 1; stroke-dasharray: 4 4; }
+    .axis { stroke: var(--axis); stroke-width: 2; fill: none; }
+    .dash { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 4; fill: none; }
+    .midline { stroke: var(--orange); stroke-width: 1.8; stroke-dasharray: 6 4; fill: none; }
+    .c-blue { stroke: var(--blue); fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
+    .c-green-dash { stroke: var(--green); fill: none; stroke-width: 2.8; stroke-dasharray: 6 6; stroke-linecap: round; stroke-linejoin: round; }
+    .c-purple { stroke: var(--purple); fill: none; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
+    .c-red-dash { stroke: var(--red); fill: none; stroke-width: 2.8; stroke-dasharray: 6 6; stroke-linecap: round; stroke-linejoin: round; }
+    .pt { fill: var(--bg); stroke: var(--green); stroke-width: 3; }
+    .pt-p { fill: var(--bg); stroke: var(--purple); stroke-width: 3; }
+    .txt { fill: var(--txt); font: 600 16.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .sub { fill: var(--sub); font: 13.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .caption { fill: var(--sub); font: 13.5px system-ui, -apple-system, sans-serif; }
+    .legend { fill: var(--txt); font: 500 13px system-ui, -apple-system, sans-serif; }
+  </style>
+  <rect class="bg" width="960" height="380" rx="12"/>
+
+  <!-- PANNELLO 1: sin^2(x) = (1 - cos(2x))/2 -->
+  <g transform="translate(20 20)">
+    <rect class="panel" width="446" height="340" rx="10"/>
+    <text class="txt" x="20" y="30">y = sin²(x)  ≡  (1 − cos(2x)) / 2</text>
+
+    <!-- Griglia e linee guida -->
+    <line class="dash" x1="64" y1="85" x2="408" y2="85"/>
+    <line class="midline" x1="64" y1="150" x2="408" y2="150"/>
+    <line class="dash" x1="148" y1="85" x2="148" y2="215"/>
+    <line class="dash" x1="232" y1="85" x2="232" y2="215"/>
+    <line class="dash" x1="316" y1="85" x2="316" y2="215"/>
+    <line class="dash" x1="400" y1="85" x2="400" y2="215"/>
+
+    <!-- Assi cartesiani -->
+    <line class="axis" x1="48" y1="215" x2="422" y2="215"/>
+    <line class="axis" x1="64" y1="238" x2="64" y2="55"/>
+
+    <!-- Curva 1: y = sin^2(x) (continua blu) -->
+    <path class="c-blue" d="M64 215 L71 212.79 L78 206.29 L85 195.96 L92 182.5 L99 166.82 L106 150 L113 133.18 L120 117.5 L127 104.04 L134 93.71 L141 87.21 L148 85 L155 87.21 L162 93.71 L169 104.04 L176 117.5 L183 133.18 L190 150 L197 166.82 L204 182.5 L211 195.96 L218 206.29 L225 212.79 L232 215 L239 212.79 L246 206.29 L253 195.96 L260 182.5 L267 166.82 L274 150 L281 133.18 L288 117.5 L295 104.04 L302 93.71 L309 87.21 L316 85 L323 87.21 L330 93.71 L337 104.04 L344 117.5 L351 133.18 L358 150 L365 166.82 L372 182.5 L379 195.96 L386 206.29 L393 212.79 L400 215"/>
+
+    <!-- Curva 2: y = (1 - cos(2x))/2 (tratteggiata verde sovrapposta) -->
+    <path class="c-green-dash" d="M64 215 L71 212.79 L78 206.29 L85 195.96 L92 182.5 L99 166.82 L106 150 L113 133.18 L120 117.5 L127 104.04 L134 93.71 L141 87.21 L148 85 L155 87.21 L162 93.71 L169 104.04 L176 117.5 L183 133.18 L190 150 L197 166.82 L204 182.5 L211 195.96 L218 206.29 L225 212.79 L232 215 L239 212.79 L246 206.29 L253 195.96 L260 182.5 L267 166.82 L274 150 L281 133.18 L288 117.5 L295 104.04 L302 93.71 L309 87.21 L316 85 L323 87.21 L330 93.71 L337 104.04 L344 117.5 L351 133.18 L358 150 L365 166.82 L372 182.5 L379 195.96 L386 206.29 L393 212.79 L400 215"/>
+
+    <!-- Punti notevoli -->
+    <circle class="pt" cx="64" cy="215" r="4.5"/>
+    <circle class="pt" cx="106" cy="150" r="4"/>
+    <circle class="pt" cx="148" cy="85" r="4.5"/>
+    <circle class="pt" cx="232" cy="215" r="4.5"/>
+    <circle class="pt" cx="316" cy="85" r="4.5"/>
+    <circle class="pt" cx="400" cy="215" r="4.5"/>
+
+    <!-- Etichette assi -->
+    <text class="sub" x="68" y="54" text-anchor="start">y</text>
+    <text class="sub" x="424" y="210" text-anchor="end">x (rad)</text>
+    <text class="sub" x="55" y="90" text-anchor="end">1</text>
+    <text class="sub" x="55" y="155" text-anchor="end">1/2</text>
+    <text class="sub" x="55" y="213" text-anchor="end">0</text>
+
+    <text class="sub" x="64" y="234" text-anchor="middle">0</text>
+    <text class="sub" x="106" y="234" text-anchor="middle">π/4</text>
+    <text class="sub" x="148" y="234" text-anchor="middle">π/2</text>
+    <text class="sub" x="232" y="234" text-anchor="middle">π</text>
+    <text class="sub" x="316" y="234" text-anchor="middle">3π/2</text>
+    <text class="sub" x="400" y="234" text-anchor="middle">2π</text>
+
+    <text class="sub" x="148" y="74" text-anchor="middle">Max = 1</text>
+    <text class="sub" x="316" y="74" text-anchor="middle">Max = 1</text>
+
+    <!-- Legenda Pannello 1 -->
+    <line class="c-blue" x1="28" y1="268" x2="62" y2="268"/>
+    <text class="legend" x="70" y="272">y₁ = sin²(x)</text>
+    <line class="c-green-dash" x1="175" y1="268" x2="209" y2="268"/>
+    <text class="legend" x="217" y="272">y₂ = (1 − cos(2x))/2 (coincidente)</text>
+    <line class="midline" x1="28" y1="292" x2="62" y2="292"/>
+    <text class="legend" x="70" y="296">Quota media y = 1/2   |   Periodo dimezzato T = π rad</text>
+    <text class="caption" x="223" y="322" text-anchor="middle">Zeri in x = 0, π, 2π;  Massimi in x = π/2, 3π/2;  Immagine: [0, 1]</text>
+  </g>
+
+  <!-- PANNELLO 2: cos^2(x) = (1 + cos(2x))/2 -->
+  <g transform="translate(494 20)">
+    <rect class="panel" width="446" height="340" rx="10"/>
+    <text class="txt" x="20" y="30">y = cos²(x)  ≡  (1 + cos(2x)) / 2</text>
+
+    <!-- Griglia e linee guida -->
+    <line class="dash" x1="64" y1="85" x2="408" y2="85"/>
+    <line class="midline" x1="64" y1="150" x2="408" y2="150"/>
+    <line class="dash" x1="148" y1="85" x2="148" y2="215"/>
+    <line class="dash" x1="232" y1="85" x2="232" y2="215"/>
+    <line class="dash" x1="316" y1="85" x2="316" y2="215"/>
+    <line class="dash" x1="400" y1="85" x2="400" y2="215"/>
+
+    <!-- Assi cartesiani -->
+    <line class="axis" x1="48" y1="215" x2="422" y2="215"/>
+    <line class="axis" x1="64" y1="238" x2="64" y2="55"/>
+
+    <!-- Curva 1: y = cos^2(x) (continua viola) -->
+    <path class="c-purple" d="M64 85 L71 87.21 L78 93.71 L85 104.04 L92 117.5 L99 133.18 L106 150 L113 166.82 L120 182.5 L127 195.96 L134 206.29 L141 212.79 L148 215 L155 212.79 L162 206.29 L169 195.96 L176 182.5 L183 166.82 L190 150 L197 133.18 L204 117.5 L211 104.04 L218 93.71 L225 87.21 L232 85 L239 87.21 L246 93.71 L253 104.04 L260 117.5 L267 133.18 L274 150 L281 166.82 L288 182.5 L295 195.96 L302 206.29 L309 212.79 L316 215 L323 212.79 L330 206.29 L337 195.96 L344 182.5 L351 166.82 L358 150 L365 133.18 L372 117.5 L379 104.04 L386 93.71 L393 87.21 L400 85"/>
+
+    <!-- Curva 2: y = (1 + cos(2x))/2 (tratteggiata rossa sovrapposta) -->
+    <path class="c-red-dash" d="M64 85 L71 87.21 L78 93.71 L85 104.04 L92 117.5 L99 133.18 L106 150 L113 166.82 L120 182.5 L127 195.96 L134 206.29 L141 212.79 L148 215 L155 212.79 L162 206.29 L169 195.96 L176 182.5 L183 166.82 L190 150 L197 133.18 L204 117.5 L211 104.04 L218 93.71 L225 87.21 L232 85 L239 87.21 L246 93.71 L253 104.04 L260 117.5 L267 133.18 L274 150 L281 166.82 L288 182.5 L295 195.96 L302 206.29 L309 212.79 L316 215 L323 212.79 L330 206.29 L337 195.96 L344 182.5 L351 166.82 L358 150 L365 133.18 L372 117.5 L379 104.04 L386 93.71 L393 87.21 L400 85"/>
+
+    <!-- Punti notevoli -->
+    <circle class="pt-p" cx="64" cy="85" r="4.5"/>
+    <circle class="pt-p" cx="106" cy="150" r="4"/>
+    <circle class="pt-p" cx="148" cy="215" r="4.5"/>
+    <circle class="pt-p" cx="232" cy="85" r="4.5"/>
+    <circle class="pt-p" cx="316" cy="215" r="4.5"/>
+    <circle class="pt-p" cx="400" cy="85" r="4.5"/>
+
+    <!-- Etichette assi -->
+    <text class="sub" x="68" y="54" text-anchor="start">y</text>
+    <text class="sub" x="424" y="210" text-anchor="end">x (rad)</text>
+    <text class="sub" x="55" y="90" text-anchor="end">1</text>
+    <text class="sub" x="55" y="155" text-anchor="end">1/2</text>
+    <text class="sub" x="55" y="213" text-anchor="end">0</text>
+
+    <text class="sub" x="64" y="234" text-anchor="middle">0</text>
+    <text class="sub" x="106" y="234" text-anchor="middle">π/4</text>
+    <text class="sub" x="148" y="234" text-anchor="middle">π/2</text>
+    <text class="sub" x="232" y="234" text-anchor="middle">π</text>
+    <text class="sub" x="316" y="234" text-anchor="middle">3π/2</text>
+    <text class="sub" x="400" y="234" text-anchor="middle">2π</text>
+
+    <text class="sub" x="232" y="74" text-anchor="middle">Max = 1</text>
+    <text class="sub" x="400" y="74" text-anchor="middle">Max = 1</text>
+
+    <!-- Legenda Pannello 2 -->
+    <line class="c-purple" x1="28" y1="268" x2="62" y2="268"/>
+    <text class="legend" x="70" y="272">y₁ = cos²(x)</text>
+    <line class="c-red-dash" x1="175" y1="268" x2="209" y2="268"/>
+    <text class="legend" x="217" y="272">y₂ = (1 + cos(2x))/2 (coincidente)</text>
+    <line class="midline" x1="28" y1="292" x2="62" y2="292"/>
+    <text class="legend" x="70" y="296">Quota media y = 1/2   |   Periodo dimezzato T = π rad</text>
+    <text class="caption" x="223" y="322" text-anchor="middle">Massimi in x = 0, π, 2π;  Zeri in x = π/2, 3π/2;  Immagine: [0, 1]</text>
+  </g>
+</svg>

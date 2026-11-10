@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 350" role="img" aria-labelledby="title desc">
+  <title id="title">Funzione logaritmica per base maggiore di 1 e base tra 0 e 1</title>
+  <desc id="desc">Grafici esatti di y = log_a(x) per a maggiore di 1 (crescente) e per 0 minore di a minore di 1 (decrescente), entrambi passanti per (1,0) e (a,1).</desc>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --panel: #f8fafc;
+      --border: #cbd5e1;
+      --grid: #e2e8f0;
+      --axis: #334155;
+      --txt: #0f172a;
+      --sub: #334155;
+      --blue: #0284c7;
+      --purple: #7c3aed;
+      --red: #e11d48;
+      --orange: #d97706;
+      --green: #16a34a;
+      --muted: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161618;
+        --panel: #1e2028;
+        --border: #3f4454;
+        --grid: #2c303d;
+        --axis: #cbd5e1;
+        --txt: #f8fafc;
+        --sub: #cbd5e1;
+        --blue: #38bdf8;
+        --purple: #a78bfa;
+        --red: #fb7185;
+        --orange: #fbbf24;
+        --green: #4ade80;
+        --muted: #94a3b8;
+      }
+    }
+    .bg { fill: var(--bg); }
+    .panel { fill: var(--panel); stroke: var(--border); stroke-width: 1.5; }
+    .grid { stroke: var(--grid); stroke-width: 1; stroke-dasharray: 4 4; }
+    .axis { stroke: var(--axis); stroke-width: 2; fill: none; }
+    . guide, .dash { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+    .asym { stroke: var(--red); stroke-width: 2; stroke-dasharray: 6 4; fill: none; }
+    .hline { stroke: var(--orange); stroke-width: 2.2; stroke-dasharray: 6 4; fill: none; }
+    .c-blue { stroke: var(--blue); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-purple { stroke: var(--purple); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-red { stroke: var(--red); fill: none; stroke-width: 3.8; stroke-linecap: round; stroke-linejoin: round; }
+    .c-green { stroke: var(--green); fill: none; stroke-width: 3.5; stroke-dasharray: 7 4; stroke-linecap: round; }
+    .pt { fill: var(--bg); stroke: var(--green); stroke-width: 3.2; }
+    .pt-red { fill: var(--bg); stroke: var(--red); stroke-width: 3.2; }
+    .txt { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .title-bg { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; }
+    .sub { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .caption { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; }
+</style>
+  <rect class="bg" width="920" height="350" rx="12"/>
+
+  <g transform="translate(22 20)">
+    <rect class="panel" width="424" height="310" rx="10"/>
+    <text class="txt" x="20" y="32">Logaritmo con a &gt; 1 (crescente)</text>
+    <line class="dash" x1="219" y1="158" x2="219" y2="118"/>
+    <line class="dash" x1="95" y1="118" x2="219" y2="118"/>
+    <line class="axis" x1="45" y1="158" x2="395" y2="158"/>
+    <line class="axis" x1="95" y1="260" x2="95" y2="52"/>
+    <path class="c-blue" d="M106.78 253.84 L109.06 243.63 L111.34 234.97 L113.62 227.43 L115.89 220.77 L118.17 214.79 L120.45 209.38 L122.73 204.43 L125.01 199.88 L127.29 195.65 L129.56 191.72 L131.84 188.03 L134.12 184.57 L136.4 181.3 L138.68 178.21 L140.96 175.28 L143.24 172.49 L145.51 169.82 L147.79 167.28 L150.07 164.84 L152.35 162.5 L154.63 160.25 L156.91 158.09 L159.19 156 L161.46 153.99 L163.74 152.04 L166.02 150.16 L168.3 148.34 L170.58 146.57 L172.86 144.86 L175.13 143.19 L177.41 141.58 L179.69 140 L181.97 138.47 L184.25 136.98 L186.53 135.52 L188.81 134.1 L191.08 132.72 L193.36 131.37 L195.64 130.04 L197.92 128.75 L200.2 127.49 L202.48 126.25 L204.76 125.04 L207.03 123.86 L209.31 122.69 L211.59 121.56 L213.87 120.44 L216.15 119.34 L218.43 118.27 L220.7 117.21 L222.98 116.18 L225.26 115.16 L227.54 114.16 L229.82 113.17 L232.1 112.21 L234.38 111.25 L236.65 110.32 L238.93 109.4 L241.21 108.49 L243.49 107.6 L245.77 106.72 L248.05 105.85 L250.33 105 L252.6 104.16 L254.88 103.33 L257.16 102.52 L259.44 101.71 L261.72 100.92 L264 100.13 L266.27 99.36 L268.55 98.6 L270.83 97.85 L273.11 97.1 L275.39 96.37 L277.67 95.64 L279.95 94.93 L282.22 94.22 L284.5 93.52 L286.78 92.84 L289.06 92.15 L291.34 91.48 L293.62 90.81 L295.9 90.16 L298.17 89.5 L300.45 88.86 L302.73 88.22 L305.01 87.6 L307.29 86.97 L309.57 86.36 L311.84 85.75 L314.12 85.14 L316.4 84.55 L318.68 83.96 L320.96 83.37 L323.24 82.79 L325.52 82.22 L327.79 81.65 L330.07 81.09 L332.35 80.53 L334.63 79.98 L336.91 79.44 L339.19 78.89 L341.47 78.36 L343.74 77.83 L346.02 77.3 L348.3 76.78 L350.58 76.26 L352.86 75.75 L355.14 75.24 L357.42 74.74 L359.69 74.24 L361.97 73.75 L364.25 73.26 L366.53 72.77 L368.81 72.29 L371.09 71.81 L373.36 71.33 L375.64 70.86 L377.92 70.4 L380.2 69.93"/>
+    <circle class="pt" cx="157" cy="158" r="5"/>
+    <circle class="pt" cx="219" cy="118" r="5"/>
+    <text class="sub" x="163" y="178" text-anchor="start">(1, 0)</text>
+    <text class="sub" x="219" y="106" text-anchor="middle">(a, 1)</text>
+    <text class="sub" x="87" y="123" text-anchor="end">1</text>
+    <text class="caption" x="212" y="290" text-anchor="middle">logₐ(x) &gt; 0 per x &gt; 1; il verso si conserva</text>
+  </g>
+
+  <g transform="translate(474 20)">
+    <rect class="panel" width="424" height="310" rx="10"/>
+    <text class="txt" x="20" y="32">Logaritmo con 0 &lt; a &lt; 1 (decrescente)</text>
+    <line class="dash" x1="126" y1="158" x2="126" y2="118"/>
+    <line class="dash" x1="95" y1="118" x2="126" y2="118"/>
+    <line class="axis" x1="45" y1="158" x2="395" y2="158"/>
+    <line class="axis" x1="95" y1="260" x2="95" y2="52"/>
+    <path class="c-red" d="M106.78 62.16 L109.06 72.37 L111.34 81.03 L113.62 88.57 L115.89 95.23 L118.17 101.21 L120.45 106.62 L122.73 111.57 L125.01 116.12 L127.29 120.35 L129.56 124.28 L131.84 127.97 L134.12 131.43 L136.4 134.7 L138.68 137.79 L140.96 140.72 L143.24 143.51 L145.51 146.18 L147.79 148.72 L150.07 151.16 L152.35 153.5 L154.63 155.75 L156.91 157.91 L159.19 160 L161.46 162.01 L163.74 163.96 L166.02 165.84 L168.3 167.66 L170.58 169.43 L172.86 171.14 L175.13 172.81 L177.41 174.42 L179.69 176 L181.97 177.53 L184.25 179.02 L186.53 180.48 L188.81 181.9 L191.08 183.28 L193.36 184.63 L195.64 185.96 L197.92 187.25 L200.2 188.51 L202.48 189.75 L204.76 190.96 L207.03 192.14 L209.31 193.31 L211.59 194.44 L213.87 195.56 L216.15 196.66 L218.43 197.73 L220.7 198.79 L222.98 199.82 L225.26 200.84 L227.54 201.84 L229.82 202.83 L232.1 203.79 L234.38 204.75 L236.65 205.68 L238.93 206.6 L241.21 207.51 L243.49 208.4 L245.77 209.28 L248.05 210.15 L250.33 211 L252.6 211.84 L254.88 212.67 L257.16 213.48 L259.44 214.29 L261.72 215.08 L264 215.87 L266.27 216.64 L268.55 217.4 L270.83 218.15 L273.11 218.9 L275.39 219.63 L277.67 220.36 L279.95 221.07 L282.22 221.78 L284.5 222.48 L286.78 223.16 L289.06 223.85 L291.34 224.52 L293.62 225.19 L295.9 225.84 L298.17 226.5 L300.45 227.14 L302.73 227.78 L305.01 228.4 L307.29 229.03 L309.57 229.64 L311.84 230.25 L314.12 230.86 L316.4 231.45 L318.68 232.04 L320.96 232.63 L323.24 233.21 L325.52 233.78 L327.79 234.35 L330.07 234.91 L332.35 235.47 L334.63 236.02 L336.91 236.56 L339.19 237.11 L341.47 237.64 L343.74 238.17 L346.02 238.7 L348.3 239.22 L350.58 239.74 L352.86 240.25 L355.14 240.76 L357.42 241.26 L359.69 241.76 L361.97 242.25 L364.25 242.74 L366.53 243.23 L368.81 243.71 L371.09 244.19 L373.36 244.67 L375.64 245.14 L377.92 245.6 L380.2 246.07"/>
+    <circle class="pt" cx="157" cy="158" r="5"/>
+    <circle class="pt" cx="126" cy="118" r="5"/>
+    <text class="sub" x="165" y="148" text-anchor="start">(1, 0)</text>
+    <text class="sub" x="136" y="112" text-anchor="start">(a, 1)</text>
+    <text class="sub" x="87" y="123" text-anchor="end">1</text>
+    <text class="caption" x="212" y="290" text-anchor="middle">logₐ(x) &gt; 0 per 0 &lt; x &lt; 1; il verso si inverte!</text>
+  </g>
+</svg>

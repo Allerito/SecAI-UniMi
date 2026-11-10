@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 370" role="img" aria-labelledby="title desc">
+  <title id="title">Interpretazione geometrica delle disequazioni irrazionali con indice pari</title>
+  <desc id="desc">Confronto grafico tra la semiparabola y = radice di f(x) e la retta y = g(x), evidenziando le tre zone del dominio.</desc>
+  <style>
+    
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --panel: #f8fafc;
+      --border: #cbd5e1;
+      --grid: #e2e8f0;
+      --axis: #334155;
+      --txt: #0f172a;
+      --sub: #334155;
+      --blue: #0284c7;
+      --purple: #7c3aed;
+      --red: #e11d48;
+      --orange: #d97706;
+      --green: #16a34a;
+      --muted: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161618;
+        --panel: #1e2028;
+        --border: #3f4454;
+        --grid: #2c303d;
+        --axis: #cbd5e1;
+        --txt: #f8fafc;
+        --sub: #cbd5e1;
+        --blue: #38bdf8;
+        --purple: #a78bfa;
+        --red: #fb7185;
+        --orange: #fbbf24;
+        --green: #4ade80;
+        --muted: #94a3b8;
+      }
+    }
+    .bg { fill: var(--bg); }
+    .panel { fill: var(--panel); stroke: var(--border); stroke-width: 1.5; }
+    .grid { stroke: var(--grid); stroke-width: 1; stroke-dasharray: 4 4; }
+    .axis { stroke: var(--axis); stroke-width: 2; fill: none; }
+    . guide, .dash { stroke: var(--muted); stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+    .asym { stroke: var(--red); stroke-width: 2; stroke-dasharray: 6 4; fill: none; }
+    .hline { stroke: var(--orange); stroke-width: 2.2; stroke-dasharray: 6 4; fill: none; }
+    .c-blue { stroke: var(--blue); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-purple { stroke: var(--purple); fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+    .c-red { stroke: var(--red); fill: none; stroke-width: 3.8; stroke-linecap: round; stroke-linejoin: round; }
+    .c-green { stroke: var(--green); fill: none; stroke-width: 3.5; stroke-dasharray: 7 4; stroke-linecap: round; }
+    .pt { fill: var(--bg); stroke: var(--green); stroke-width: 3.2; }
+    .pt-red { fill: var(--bg); stroke: var(--red); stroke-width: 3.2; }
+    .txt { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .title-bg { fill: var(--txt); font: 600 18px system-ui, -apple-system, sans-serif; }
+    .sub { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .caption { fill: var(--sub); font: 14.5px system-ui, -apple-system, sans-serif; }
+
+    .zone1 { fill: #fef3c7; fill-opacity: 0.55; }
+    .zone2 { fill: #dbeafe; fill-opacity: 0.55; }
+    .zone3 { fill: #fce7f3; fill-opacity: 0.45; }
+    @media (prefers-color-scheme: dark) {
+      .zone1 { fill: #78350f; fill-opacity: 0.3; }
+      .zone2 { fill: #1e3a8a; fill-opacity: 0.3; }
+      .zone3 { fill: #831843; fill-opacity: 0.25; }
+    }
+  </style>
+  <rect class="bg" width="920" height="370" rx="12"/>
+  <g transform="translate(20 20)">
+    <rect class="panel" width="880" height="330" rx="10"/>
+    <text class="txt" x="24" y="32">Lettura grafica di √f(x) &gt; g(x) e √f(x) &lt; g(x)</text>
+
+    <rect class="zone1" x="76" y="50" width="180" height="225"/>
+    <rect class="zone2" x="256" y="50" width="270" height="225"/>
+    <rect class="zone3" x="526" y="50" width="212.4" height="225"/>
+
+    <line class="dash" x1="256" y1="50" x2="256" y2="275"/>
+    <line class="dash" x1="526" y1="50" x2="526" y2="275"/>
+
+    <line class="axis" x1="40" y1="210" x2="840" y2="210"/>
+    <line class="axis" x1="220" y1="275" x2="220" y2="50"/>
+
+    <path class="c-blue" d="M76 210 L80.73 198.21 L85.46 193.32 L90.19 189.58 L94.93 186.42 L99.66 183.63 L104.39 181.12 L109.12 178.8 L113.85 176.65 L118.58 174.62 L123.31 172.71 L128.05 170.89 L132.78 169.15 L137.51 167.48 L142.24 165.88 L146.97 164.33 L151.7 162.83 L156.43 161.38 L161.17 159.97 L165.9 158.6 L170.63 157.26 L175.36 155.96 L180.09 154.69 L184.82 153.45 L189.55 152.23 L194.29 151.04 L199.02 149.87 L203.75 148.73 L208.48 147.6 L213.21 146.5 L217.94 145.41 L222.67 144.34 L227.41 143.29 L232.14 142.26 L236.87 141.24 L241.6 140.24 L246.33 139.25 L251.06 138.27 L255.79 137.31 L260.53 136.36 L265.26 135.42 L269.99 134.49 L274.72 133.58 L279.45 132.67 L284.18 131.78 L288.91 130.9 L293.65 130.02 L298.38 129.16 L303.11 128.3 L307.84 127.46 L312.57 126.62 L317.3 125.79 L322.03 124.97 L326.77 124.15 L331.5 123.35 L336.23 122.55 L340.96 121.76 L345.69 120.97 L350.42 120.19 L355.15 119.42 L359.89 118.66 L364.62 117.9 L369.35 117.15 L374.08 116.4 L378.81 115.66 L383.54 114.93 L388.27 114.2 L393.01 113.48 L397.74 112.76 L402.47 112.05 L407.2 111.34 L411.93 110.64 L416.66 109.94 L421.39 109.25 L426.13 108.56 L430.86 107.88 L435.59 107.2 L440.32 106.53 L445.05 105.86 L449.78 105.19 L454.51 104.53 L459.25 103.87 L463.98 103.22 L468.71 102.57 L473.44 101.92 L478.17 101.28 L482.9 100.65 L487.63 100.01 L492.37 99.38 L497.1 98.75 L501.83 98.13 L506.56 97.51 L511.29 96.9 L516.02 96.28 L520.75 95.67 L525.49 95.07 L530.22 94.46 L534.95 93.86 L539.68 93.27 L544.41 92.67 L549.14 92.08 L553.87 91.49 L558.61 90.91 L563.34 90.32 L568.07 89.74 L572.8 89.17 L577.53 88.59 L582.26 88.02 L586.99 87.45 L591.73 86.89 L596.46 86.32 L601.19 85.76 L605.92 85.21 L610.65 84.65 L615.38 84.1 L620.11 83.54 L624.85 83 L629.58 82.45 L634.31 81.91 L639.04 81.36 L643.77 80.83 L648.5 80.29 L653.23 79.75 L657.97 79.22 L662.7 78.69 L667.43 78.16 L672.16 77.64 L676.89 77.11 L681.62 76.59 L686.35 76.07 L691.09 75.55 L695.82 75.03 L700.55 74.52 L705.28 74.01 L710.01 73.5 L714.74 72.99 L719.47 72.48 L724.21 71.98 L728.94 71.48 L733.67 70.97 L738.4 70.48"/>
+    <path class="c-red" d="M133.6 262.13 L161.68 250.17 L189.76 238.21 L217.84 226.25 L245.92 214.29 L274 202.33 L302.08 190.37 L330.16 178.41 L358.24 166.45 L386.32 154.49 L414.4 142.53 L442.48 130.57 L470.56 118.61 L498.64 106.65 L526.72 94.69 L554.8 82.73 L582.88 70.77 L610.96 58.81 L639.04 46.85 L667.12 34.89 L695.2 22.93"/>
+
+    <circle class="pt" cx="76" cy="210" r="5.5"/>
+    <circle class="pt" cx="256" cy="210" r="5.5"/>
+    <circle class="pt" cx="526" cy="95" r="6"/>
+
+    <text class="sub" x="166" y="72" text-anchor="middle">Zona 1: f(x) ≥ 0, g(x) &lt; 0</text>
+    <text class="sub" x="166" y="92" text-anchor="middle">√f(x) &gt; g(x) sempre vera</text>
+
+    <text class="sub" x="391" y="72" text-anchor="middle">Zona 2: g(x) ≥ 0</text>
+    <text class="sub" x="391" y="92" text-anchor="middle">√f(x) &gt; g(x) ⟺ f(x) &gt; [g(x)]²</text>
+
+    <text class="sub" x="632.2" y="185" text-anchor="middle">Zona 3: √f(x) &lt; g(x)</text>
+    <text class="sub" x="632.2" y="203" text-anchor="middle">f(x) &lt; [g(x)]²</text>
+
+    <text class="sub" x="76" y="232" text-anchor="middle">f(x) = 0</text>
+    <text class="sub" x="262" y="232" text-anchor="start">g(x) = 0</text>
+    <text class="sub" x="516" y="83" text-anchor="end">Intersezione</text>
+
+    <text class="sub" x="755" y="75.48" text-anchor="start">y = √f(x)</text>
+    <text class="sub" x="705" y="27.93" text-anchor="start">y = g(x)</text>
+
+    <text class="caption" x="440" y="308" text-anchor="middle">La curva blu y = √f(x) esiste solo per f(x) ≥ 0 (semipiano y ≥ 0); la retta rossa y = g(x) cambia segno in g(x) = 0.</text>
+  </g>
+</svg>
