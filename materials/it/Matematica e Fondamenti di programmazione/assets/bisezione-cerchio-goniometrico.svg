@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 390" role="img" aria-labelledby="title desc">
+  <title id="title">Interpretazione geometrica della bisezione sulla circonferenza goniometrica e scelta del segno</title>
+  <desc id="desc">A sinistra la circonferenza goniometrica di raggio 1 con un angolo x (o α) e il suo angolo dimezzato x/2 (o α/2) sulla bisettrice; a destra la mappa dei segni nei quattro quadranti per sin(x/2), cos(x/2) e tan(x/2).</desc>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --panel: #f8fafc;
+      --border: #cbd5e1;
+      --grid: #e2e8f0;
+      --axis: #334155;
+      --txt: #0f172a;
+      --sub: #334155;
+      --blue: #0284c7;
+      --purple: #7c3aed;
+      --red: #e11d48;
+      --orange: #d97706;
+      --green: #16a34a;
+      --muted: #64748b;
+      --fill-alpha: rgba(124, 58, 237, 0.12);
+      --fill-half: rgba(2, 132, 199, 0.18);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161618;
+        --panel: #1e2028;
+        --border: #3f4454;
+        --grid: #2c303d;
+        --axis: #cbd5e1;
+        --txt: #f8fafc;
+        --sub: #cbd5e1;
+        --blue: #38bdf8;
+        --purple: #a78bfa;
+        --red: #fb7185;
+        --orange: #fbbf24;
+        --green: #4ade80;
+        --muted: #94a3b8;
+        --fill-alpha: rgba(167, 139, 250, 0.16);
+        --fill-half: rgba(56, 189, 248, 0.22);
+      }
+    }
+    .bg { fill: var(--bg); }
+    .panel { fill: var(--panel); stroke: var(--border); stroke-width: 1.5; }
+    .axis { stroke: var(--axis); stroke-width: 2; fill: none; }
+    .circle { stroke: var(--axis); stroke-width: 2.2; fill: none; }
+    .dash { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+    .ray-alpha { stroke: var(--purple); stroke-width: 3.2; fill: none; stroke-linecap: round; }
+    .ray-half { stroke: var(--blue); stroke-width: 3.5; fill: none; stroke-linecap: round; }
+    .proj-sin { stroke: var(--red); stroke-width: 3; stroke-dasharray: 5 3; fill: none; }
+    .proj-cos { stroke: var(--green); stroke-width: 3.2; fill: none; }
+    .proj-alpha { stroke: var(--purple); stroke-width: 2; stroke-dasharray: 4 3; fill: none; }
+    .sector-alpha { fill: var(--fill-alpha); stroke: var(--purple); stroke-width: 2; }
+    .sector-half { fill: var(--fill-half); stroke: var(--blue); stroke-width: 2.2; }
+    .pt-blue { fill: var(--bg); stroke: var(--blue); stroke-width: 3.2; }
+    .pt-purple { fill: var(--bg); stroke: var(--purple); stroke-width: 3.2; }
+    .pt-axis { fill: var(--axis); }
+    .q-box { fill: var(--bg); stroke: var(--border); stroke-width: 1.4; rx: 8; }
+    .txt { fill: var(--txt); font: 600 16.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .sub { fill: var(--sub); font: 13.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .sub-b { fill: var(--blue); font: 600 13.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .sub-p { fill: var(--purple); font: 600 13.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .sub-g { fill: var(--green); font: 600 13.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .sub-r { fill: var(--red); font: 600 13.5px system-ui, -apple-system, sans-serif; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+    .caption { fill: var(--sub); font: 13.2px system-ui, -apple-system, sans-serif; }
+  </style>
+  <rect class="bg" width="960" height="390" rx="12"/>
+
+  <!-- PANNELLO 1: Cerchio goniometrico con angolo α (120°) e angolo dimezzato α/2 (60°) -->
+  <!-- Centro O = (225, 185), Raggio R = 105 -->
+  <!-- Angolo α = 120° = 2π/3 rad: P = (225 - 52.5, 185 - 90.93) = (172.5, 94.07) -->
+  <!-- Angolo α/2 = 60° = π/3 rad: M = (225 + 52.5, 185 - 90.93) = (277.5, 94.07) -->
+  <g transform="translate(20 20)">
+    <rect class="panel" width="446" height="350" rx="10"/>
+    <text class="txt" x="20" y="30">Circonferenza Goniometrica: Angolo α e Metà α/2</text>
+
+    <!-- Assi e circonferenza -->
+    <line class="axis" x1="80" y1="185" x2="375" y2="185"/>
+    <line class="axis" x1="225" y1="305" x2="225" y2="55"/>
+    <circle class="circle" cx="225" cy="185" r="105"/>
+
+    <!-- Settore angolo α (raggio arco = 46) da 0° a 120°: (271, 185) -> (202, 145.16) -->
+    <path class="sector-alpha" d="M 225 185 L 271 185 A 46 46 0 0 0 202 145.16 Z"/>
+    <!-- Settore angolo dimezzato α/2 (raggio arco = 30) da 0° a 60°: (255, 185) -> (240, 159.02) -->
+    <path class="sector-half" d="M 225 185 L 255 185 A 30 30 0 0 0 240 159.02 Z"/>
+
+    <!-- Proiezioni di P(cos α, sin α) -->
+    <line class="proj-alpha" x1="172.5" y1="94.07" x2="172.5" y2="185"/>
+    <line class="proj-alpha" x1="172.5" y1="94.07" x2="225" y2="94.07"/>
+
+    <!-- Proiezioni di M(cos(α/2), sin(α/2)) -->
+    <line class="proj-sin" x1="277.5" y1="94.07" x2="277.5" y2="185"/>
+    <line class="proj-cos" x1="225" y1="185" x2="277.5" y2="185"/>
+
+    <!-- Raggi OP (angolo α) e OM (bisettrice α/2) -->
+    <line class="ray-alpha" x1="225" y1="185" x2="172.5" y2="94.07"/>
+    <line class="ray-half" x1="225" y1="185" x2="277.5" y2="94.07"/>
+
+    <!-- Punti sulla circonferenza -->
+    <circle class="pt-axis" cx="225" cy="185" r="3.5"/>
+    <circle class="pt-axis" cx="330" cy="185" r="3.5"/>
+    <circle class="pt-purple" cx="172.5" cy="94.07" r="5"/>
+    <circle class="pt-blue" cx="277.5" cy="94.07" r="5"/>
+
+    <!-- Etichette geometriche -->
+    <text class="sub" x="372" y="178" text-anchor="end">x</text>
+    <text class="sub" x="233" y="64" text-anchor="start">y</text>
+    <text class="sub" x="215" y="201" text-anchor="end">O</text>
+    <text class="sub" x="338" y="201" text-anchor="start">A(1, 0)</text>
+    <text class="sub" x="112" y="201" text-anchor="end">(-1, 0)</text>
+
+    <text class="sub-p" x="162" y="84" text-anchor="end">P(cos α, sin α)</text>
+    <text class="sub-b" x="286" y="84" text-anchor="start">M(cos(α/2), sin(α/2))</text>
+
+    <text class="sub-p" x="214" y="136" text-anchor="middle">α</text>
+    <text class="sub-b" x="256" y="169" text-anchor="start">α/2</text>
+
+    <text class="sub-g" x="252" y="202" text-anchor="middle">cos(α/2)</text>
+    <text class="sub-r" x="284" y="144" text-anchor="start">sin(α/2)</text>
+    <text class="sub-p" x="172.5" y="202" text-anchor="middle">cos α</text>
+
+    <text class="caption" x="223" y="318" text-anchor="middle">Esempio: α = 2π/3 (II quadrante, cos α &lt; 0)  ⇒  α/2 = π/3 (I quadrante!)</text>
+    <text class="caption" x="223" y="336" text-anchor="middle">La bisettrice OM divide l'angolo α in due parti congruenti di ampiezza α/2</text>
+  </g>
+
+  <!-- PANNELLO 2: Bussola della scelta del segno per quadrante di x/2 -->
+  <g transform="translate(494 20)">
+    <rect class="panel" width="446" height="350" rx="10"/>
+    <text class="txt" x="20" y="30">Scelta del Segno (±) in base al Quadrante di x/2</text>
+
+    <!-- Assi divisori dei 4 quadranti -->
+    <line class="axis" x1="40" y1="182" x2="406" y2="182"/>
+    <line class="axis" x1="223" y1="58" x2="223" y2="302"/>
+
+    <!-- Etichette angoli cardinali -->
+    <text class="sub" x="223" y="52" text-anchor="middle">π/2 (90°)</text>
+    <text class="sub" x="34" y="186" text-anchor="end">π</text>
+    <text class="sub" x="412" y="186" text-anchor="start">0, 2π</text>
+    <text class="sub" x="223" y="317" text-anchor="middle">3π/2 (270°)</text>
+
+    <!-- II Quadrante (Alto Sinistra) -->
+    <rect class="q-box" x="52" y="68" width="156" height="100"/>
+    <text class="sub-p" x="130" y="88" text-anchor="middle">II Quadrante per x/2</text>
+    <text class="sub" x="130" y="106" text-anchor="middle">π/2 &lt; x/2 &lt; π</text>
+    <text class="sub-g" x="130" y="126" text-anchor="middle">sin(x/2) :  + √(...)</text>
+    <text class="sub-r" x="130" y="144" text-anchor="middle">cos(x/2) :  − √(...)</text>
+    <text class="sub-r" x="130" y="161" text-anchor="middle">tan(x/2) :  − (negativa)</text>
+
+    <!-- I Quadrante (Alto Destra) -->
+    <rect class="q-box" x="238" y="68" width="156" height="100"/>
+    <text class="sub-b" x="316" y="88" text-anchor="middle">I Quadrante per x/2</text>
+    <text class="sub" x="316" y="106" text-anchor="middle">0 &lt; x/2 &lt; π/2</text>
+    <text class="sub-g" x="316" y="126" text-anchor="middle">sin(x/2) :  + √(...)</text>
+    <text class="sub-g" x="316" y="144" text-anchor="middle">cos(x/2) :  + √(...)</text>
+    <text class="sub-g" x="316" y="161" text-anchor="middle">tan(x/2) :  + (positiva)</text>
+
+    <!-- III Quadrante (Basso Sinistra) -->
+    <rect class="q-box" x="52" y="196" width="156" height="100"/>
+    <text class="sub-p" x="130" y="216" text-anchor="middle">III Quadrante per x/2</text>
+    <text class="sub" x="130" y="234" text-anchor="middle">π &lt; x/2 &lt; 3π/2</text>
+    <text class="sub-r" x="130" y="254" text-anchor="middle">sin(x/2) :  − √(...)</text>
+    <text class="sub-r" x="130" y="272" text-anchor="middle">cos(x/2) :  − √(...)</text>
+    <text class="sub-g" x="130" y="289" text-anchor="middle">tan(x/2) :  + (positiva)</text>
+
+    <!-- IV Quadrante (Basso Destra) -->
+    <rect class="q-box" x="238" y="196" width="156" height="100"/>
+    <text class="sub-b" x="316" y="216" text-anchor="middle">IV Quadrante per x/2</text>
+    <text class="sub" x="316" y="234" text-anchor="middle">3π/2 &lt; x/2 &lt; 2π</text>
+    <text class="sub-r" x="316" y="254" text-anchor="middle">sin(x/2) :  − √(...)</text>
+    <text class="sub-g" x="316" y="272" text-anchor="middle">cos(x/2) :  + √(...)</text>
+    <text class="sub-r" x="316" y="289" text-anchor="middle">tan(x/2) :  − (negativa)</text>
+
+    <text class="caption" x="223" y="336" text-anchor="middle">Regola d'oro: il segno dipende dal quadrante di x/2 (non da quello di x!)</text>
+  </g>
+</svg>

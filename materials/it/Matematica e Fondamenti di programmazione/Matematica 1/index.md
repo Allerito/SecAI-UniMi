@@ -15,7 +15,7 @@ Gli appunti sono organizzati in due percorsi: prima i prerequisiti, poi gli argo
 
 1. [[1 - Matematica di base - Aspetti teorici e pratici/1.1.1 - Retta e parabola - Equazioni e disequazioni|1.1.1 - Retta e parabola. Equazioni e disequazioni]]
 2. [[1 - Matematica di base - Aspetti teorici e pratici/1.2.1 - Equazioni e disequazioni esponenziali|1.2.1 - Equazioni e disequazioni esponenziali]]
-3. [[1 - Matematica di base - Aspetti teorici e pratici/1.2.2 - Equazioni esponenziali - Attività|1.2.2 - Equazioni esponenziali (attività)]]
+3. [[1.2.2 - Equazioni esponenziali|1.2.2 - Equazioni esponenziali (attività)]]
 4. [[1 - Matematica di base - Aspetti teorici e pratici/1.3.1 - Equazioni e disequazioni logaritmiche|1.3.1 - Equazioni e disequazioni logaritmiche]]
 5. [[1 - Matematica di base - Aspetti teorici e pratici/1.4.1 - Equazioni e disequazioni irrazionali|1.4.1 - Equazioni e disequazioni irrazionali]]
 6. [[1 - Matematica di base - Aspetti teorici e pratici/1.5.1 - Cenni sulle questioni trigonometriche|1.5.1 - Cenni sulle questioni trigonometriche]]
