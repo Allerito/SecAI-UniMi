@@ -57,13 +57,10 @@ SecAI-UniMi/
 │   │   └── Matematica e Fondamenti di programmazione/
 │   └── en/
 │
-├── site/
-│   ├── quartz.config.yaml
-│   ├── package.json
-│   ├── package-lock.json
-│   └── ...
-│
 └── .github/
+    ├── quartz/
+    │   ├── quartz.config.yaml
+    │   └── prepare-content.mjs
     └── workflows/
         └── deploy-pages.yml
 ```
@@ -126,26 +123,28 @@ You do not need programming experience or Git knowledge to report a problem. Eve
 
 The documentation website is generated using Quartz 5 and published through GitHub Actions and GitHub Pages.
 
-Website source files and configuration are maintained inside the `site/` directory.
+Website configuration and content preparation scripts are maintained inside `.github/quartz/`. Quartz is cloned and built dynamically by the CI workflow.
 
 ### Requirements
 
 - Node.js 22 or later.
 - npm 10.9.2 or later.
 
-### Local Development
+### Local Development (Optional)
 
 From the repository root:
 
 ```bash
+git clone --depth 1 --branch v5 https://github.com/jackyzha0/quartz.git site
+cp .github/quartz/quartz.config.yaml site/quartz.config.yaml
+node .github/quartz/prepare-content.mjs --source materials --output site/content
 cd site
 npm ci
-npx quartz plugin install --from-config
-npm run prepare-content
-npx quartz build --serve
+node quartz/bootstrap-cli.mjs plugin install --from-config
+node quartz/bootstrap-cli.mjs build --serve
 ```
 
-The commands start the local Quartz preview using the content currently available in `site/content/`.
+The commands start the local Quartz preview using the content generated from `materials/`.
 
 The preparation script discovers every language under `materials/`, copies its content, creates missing language indexes, and generates the language links on the website homepage.
 

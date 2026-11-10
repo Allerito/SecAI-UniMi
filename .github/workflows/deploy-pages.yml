@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - main
+      - master
 
   pull_request:
     branches:
       - main
+      - master
 
   workflow_dispatch:
 
@@ -29,12 +31,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify Quartz installation
+      - name: Verify Quartz configuration
         run: |
-          test -f site/package.json
-          test -f site/package-lock.json
-          test -f site/quartz.config.yaml
+          test -f .github/quartz/quartz.config.yaml
+          test -f .github/quartz/prepare-content.mjs
           test -d materials
+
+      - name: Clone Quartz v5
+        run: |
+          git clone --depth 1 --branch v5 https://github.com/jackyzha0/quartz.git site
+          cp .github/quartz/quartz.config.yaml site/quartz.config.yaml
+          sed -i 's/gitignore: true/gitignore: false/' site/quartz/util/glob.ts
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -52,21 +59,21 @@ jobs:
         run: node quartz/bootstrap-cli.mjs plugin install --from-config
 
       - name: Prepare multilingual content
-        run: node site/scripts/prepare-content.mjs
+        run: node .github/quartz/prepare-content.mjs --source materials --output site/content
 
       - name: Build Quartz
         working-directory: site
         run: node quartz/bootstrap-cli.mjs build
 
       - name: Upload Pages artifact
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: actions/upload-pages-artifact@v4
         with:
           path: site/public
 
   deploy:
     name: Deploy to GitHub Pages
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     needs: build
     runs-on: ubuntu-latest
 
