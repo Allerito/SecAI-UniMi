@@ -1,4 +1,5 @@
-import { access, cp, mkdir, mkdtemp, readdir, rm, writeFile } from "node:fs/promises"
+import { execFileSync } from "node:child_process"
+import { access, cp, mkdir, mkdtemp, readdir, rm, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { fileURLToPath, pathToFileURL } from "node:url"
 
@@ -118,6 +119,31 @@ function assertSafeDirectories(sourceDirectory, outputDirectory) {
   }
 }
 
+// Enrich generated copies only: source notes remain valid Obsidian Markdown.
+async function addSourceDates(source, destination) {
+  for (const entry of await readdir(source, { withFileTypes: true })) {
+    const original = path.join(source, entry.name)
+    const copied = path.join(destination, entry.name)
+    if (entry.isDirectory()) await addSourceDates(original, copied)
+    else if (entry.isFile() && entry.name.endsWith(".md")) {
+      let dates
+      try {
+        dates = execFileSync("git", ["log", "--follow", "--format=%aI", "--", original],
+          { cwd: repositoryRoot, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim().split("\n").filter(Boolean)
+      } catch { continue } // Source archives have no Git history; use filesystem fallback.
+      if (!dates.length) continue
+      let text = await readFile(copied, "utf8")
+      const front = text.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/)
+      const fields = { created: dates.at(-1), modified: dates[0] }
+      const additions = Object.entries(fields).filter(([key]) => !new RegExp(`^${key}:`, "m").test(front?.[1] ?? ""))
+        .map(([key, value]) => `${key}: ${JSON.stringify(value)}`).join("\n")
+      if (!additions) continue
+      text = front ? text.replace(front[0], `---\n${front[1]}\n${additions}\n---\n`) : `---\n${additions}\n---\n${text}`
+      await writeFile(copied, text, "utf8")
+    }
+  }
+}
+
 export async function prepareContent({ sourceDirectory, outputDirectory }) {
   const source = path.resolve(sourceDirectory)
   const output = path.resolve(outputDirectory)
@@ -132,6 +158,7 @@ export async function prepareContent({ sourceDirectory, outputDirectory }) {
     for (const language of languages) {
       const destination = path.join(stagingDirectory, language.locale)
       await cp(language.source, destination, { recursive: true })
+      await addSourceDates(language.source, destination)
 
       const indexPath = path.join(destination, "index.md")
       if (!(await fileExists(indexPath))) {
