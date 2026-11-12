@@ -212,7 +212,7 @@ $$
 
 ## 4. Funzioni, Esponenziali e Logaritmi
 
-Approfondimenti nelle lezioni dedicate: [[0.4 - Logaritmi|Logaritmi]], [[1.2.1 - Equazioni e disequazioni esponenziali|Equazioni e disequazioni esponenziali]], [[1.2.2 - Equazioni esponenziali|Equazioni esponenziali con logaritmi]], [[1.3.1 - Equazioni e disequazioni logaritmiche|Equazioni e disequazioni logaritmiche]] e [[2.1.1 - Le funzioni reali di una variabile reale|Funzioni reali di una variabile reale]].
+Approfondimenti nelle lezioni dedicate: [[0.4 - Logaritmi|Logaritmi]], [[1.2.1 - Equazioni e disequazioni esponenziali|Equazioni e disequazioni esponenziali]], [[1.2.2 - Equazioni esponenziali|Equazioni esponenziali con logaritmi]], [[1.3.1 - Equazioni e disequazioni logaritmiche|Equazioni e disequazioni logaritmiche]] e [[2.6.1 - Funzioni e applicazioni|Funzioni e applicazioni]].
 
 ### 4.1 Definizione di Funzione e Proprietà Grafiche
 

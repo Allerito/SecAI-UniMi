@@ -31,45 +31,38 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Verify Quartz configuration
-        run: |
-          test -f .github/quartz/quartz.config.yaml
-          test -f .github/quartz/prepare-content.mjs
-          test -d materials
-
-      - name: Clone Quartz v5
-        run: |
-          git clone --depth 1 --branch v5 https://github.com/jackyzha0/quartz.git site
-          cp .github/quartz/quartz.config.yaml site/quartz.config.yaml
-          sed -i 's/gitignore: true/gitignore: false/' site/quartz/util/glob.ts
-
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "24"
           cache: npm
-          cache-dependency-path: site/package-lock.json
+          cache-dependency-path: .github/quartz/package-lock.json
 
-      - name: Install dependencies
-        working-directory: site
+      - name: Prepare pinned Quartz
+        run: node .github/quartz/setup.mjs
+
+      - name: Install locked dependencies and theme
+        working-directory: tmp/quartz-build
         run: npm ci
 
-      - name: Install Quartz plugins
-        working-directory: site
-        run: node quartz/bootstrap-cli.mjs plugin install --from-config
-
       - name: Prepare multilingual content
-        run: node .github/quartz/prepare-content.mjs --source materials --output site/content
+        run: node .github/quartz/prepare-content.mjs --source materials --output tmp/quartz-build/content
 
       - name: Build Quartz
-        working-directory: site
+        working-directory: tmp/quartz-build
         run: node quartz/bootstrap-cli.mjs build
+
+      - name: Test publication guards
+        run: node --test .github/quartz/verify-output.test.mjs
+
+      - name: Verify website before publishing
+        run: node .github/quartz/verify-output.mjs
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: actions/upload-pages-artifact@v4
         with:
-          path: site/public
+          path: tmp/quartz-build/public
 
   deploy:
     name: Deploy to GitHub Pages

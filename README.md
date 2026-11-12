@@ -123,7 +123,7 @@ You do not need programming experience or Git knowledge to report a problem. Eve
 
 The documentation website is generated using Quartz 5 and published through GitHub Actions and GitHub Pages.
 
-Website configuration and content preparation scripts are maintained inside `.github/quartz/`. Quartz is cloned and built dynamically by the CI workflow.
+Website configuration and content preparation scripts are maintained inside `.github/quartz/`. Quartz is checked out at the commit in `.github/quartz/quartz-revision.txt`. The tracked package manifest and lockfile include all plugins and the Minimal theme; CI installs them with `npm ci`.
 
 ### Requirements
 
@@ -135,16 +135,28 @@ Website configuration and content preparation scripts are maintained inside `.gi
 From the repository root:
 
 ```bash
-git clone --depth 1 --branch v5 https://github.com/jackyzha0/quartz.git site
-cp .github/quartz/quartz.config.yaml site/quartz.config.yaml
-node .github/quartz/prepare-content.mjs --source materials --output site/content
-cd site
+node .github/quartz/setup.mjs
+cd tmp/quartz-build
 npm ci
-node quartz/bootstrap-cli.mjs plugin install --from-config
+cd ../..
+node .github/quartz/prepare-content.mjs --source materials --output tmp/quartz-build/content
+cd tmp/quartz-build
+node quartz/bootstrap-cli.mjs build
+cd ../..
+node .github/quartz/verify-output.mjs
+cd tmp/quartz-build
 node quartz/bootstrap-cli.mjs build --serve
 ```
 
 The commands start the local Quartz preview using the content generated from `materials/`.
+
+The build lives in `tmp/quartz-build`; an existing legacy `site/` folder is left untouched. Setup can be repeated for the same pinned revision. To change revisions, first move the old build directory aside. The script checks the upstream scanning patch before applying it, so ignored generated content is still published.
+
+Generated copies inherit creation/modification dates from the source Git history, while explicit frontmatter dates take precedence. ZIP downloads without Git history use filesystem dates.
+
+Before uploading, CI checks HTML homepages, the search index and at least ten populated notes in each of the two existing courses. Update these expectations deliberately if the course structure changes.
+
+When upgrading Quartz, update the pinned commit, reconcile the tracked `package.json` with upstream, regenerate `package-lock.json` including the theme and Excalidraw, then run the same clean install, build and verification steps.
 
 The preparation script discovers every language under `materials/`, copies its content, creates missing language indexes, and generates the language links on the website homepage.
 
