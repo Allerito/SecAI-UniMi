@@ -119,6 +119,8 @@ All lecture notes and educational materials should use **Markdown (`.md`)** and 
 
 The repository is designed primarily for Obsidian while remaining as readable as possible on GitHub.
 
+See the [Style Guide](STYLE_GUIDE.md) for lecture note structure, tone, formatting, and templates.
+
 ### Markdown Formatting
 
 Use descriptive headings and a consistent hierarchy.
@@ -204,7 +206,7 @@ Before submitting changes:
 
 ### Images and Attachments
 
-Store images and supporting attachments in the relevant course's `Assets/` directory.
+Store images and supporting attachments in the `assets/` or `Assets/` directory already used by the course or its subject area.
 
 Guidelines:
 
@@ -257,6 +259,7 @@ Before submitting a new note, make sure that:
 5. External sources are acknowledged.
 6. The document follows the repository structure.
 7. Links and images work correctly.
+8. The note follows the [Style Guide](STYLE_GUIDE.md).
 
 Notes do not need to be exhaustive, but they should provide meaningful educational value.
 
